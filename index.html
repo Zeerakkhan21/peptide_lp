@@ -1,0 +1,1367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Peptides Costa Rica — Premium Research Peptides, In Local Stock</title>
+<meta name="description" content="Your local source for premium research peptides in Costa Rica. No cross-border delays, no hidden import fees. Certificates of Analysis available. 15% off 5+ vials. Ask about availability in 45 seconds.">
+<meta name="theme-color" content="#06213F">
+<meta property="og:title" content="Peptides Costa Rica — Premium Research Peptides, In Local Stock">
+<meta property="og:description" content="No cross-border delays. No hidden import fees. Laboratory-tested purity, COAs available, delivered within Costa Rica.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ==========================================================================
+   PEPTIDES COSTA RICA — landing page
+   Single typeface (Poppins) throughout. Config in the CONFIG object below.
+   ========================================================================== */
+
+:root{
+  --b900:#06213F; --b800:#0A3468; --b700:#0B4A8F; --b600:#1160B8;
+  --b500:#1573D6; --b400:#3D96EE; --b200:#B9D9F7; --b100:#DCEBFB; --b50:#F0F7FE;
+  --cyan:#00C2D7; --cyan-lt:#5FE3EF; --lime:#57D785;
+  --ink:#0A1B2D; --ink2:#465D74; --ink3:#7F92A6;
+  --bg:#F7FAFD; --surface:#FFFFFF; --line:#E2EAF3;
+  --wa:#25D366; --wa-dk:#128C7E;
+  --r-s:10px; --r:16px; --r-l:22px; --r-xl:30px;
+  --sh-s:0 1px 2px rgba(10,27,45,.05), 0 2px 8px rgba(10,27,45,.04);
+  --sh:0 6px 16px rgba(10,27,45,.06), 0 20px 44px -20px rgba(10,27,45,.22);
+  --sh-l:0 30px 80px -30px rgba(6,33,63,.5);
+  --maxw:1160px;
+  --ease:cubic-bezier(.22,.7,.3,1);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+button,input,select,textarea{font-family:inherit}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:'Poppins',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;
+  font-size:16px;line-height:1.75;font-weight:400;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+body.is-locked{overflow:hidden}
+img{max-width:100%;display:block}
+
+h1,h2,h3,h4{font-family:inherit;font-weight:700;line-height:1.18;letter-spacing:-.022em;margin:0 0 .55em;color:var(--ink)}
+h1{font-size:clamp(2rem,1.4rem + 2.5vw,3.2rem);line-height:1.14;letter-spacing:-.032em}
+h2{font-size:clamp(1.6rem,1.2rem + 1.9vw,2.45rem);letter-spacing:-.028em}
+h3{font-size:clamp(1.05rem,.98rem + .42vw,1.25rem);letter-spacing:-.018em}
+p{margin:0 0 1.1em}
+a{color:var(--b600);text-underline-offset:3px}
+
+.wrap{width:100%;max-width:var(--maxw);margin-inline:auto;padding-inline:22px}
+.sec{padding:clamp(58px,6.6vw,104px) 0;position:relative}
+.sec--dk{background:var(--b900);color:#fff}
+.sec--dk h2,.sec--dk h3{color:#fff}
+.sec--tint{background:linear-gradient(180deg,var(--bg),var(--b50))}
+
+.skip{position:absolute;left:-9999px;top:0;z-index:300;background:var(--b900);color:#fff;padding:12px 20px;font-weight:600}
+.skip:focus{left:0}
+:focus-visible{outline:3px solid var(--b500);outline-offset:3px;border-radius:6px}
+
+.eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:.72rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--b600);margin:0 0 16px}
+.eyebrow::before{content:"";width:20px;height:2px;background:var(--cyan);border-radius:2px}
+.sec--dk .eyebrow{color:var(--cyan-lt)}
+.lede{font-size:clamp(.98rem,.94rem + .26vw,1.1rem);color:var(--ink2);max-width:64ch;font-weight:400}
+.sec--dk .lede{color:rgba(255,255,255,.76)}
+.sec-head{max-width:44rem;margin-bottom:clamp(32px,3.8vw,54px)}
+.sec-head.center{margin-inline:auto;text-align:center}
+.sec-head.center .eyebrow{justify-content:center}
+.sec-head.center .lede{margin-inline:auto}
+
+/* ---------------- Buttons ---------------- */
+.btn{
+  position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  font-family:inherit;font-size:.97rem;font-weight:600;line-height:1;letter-spacing:-.005em;
+  padding:18px 30px;border-radius:999px;border:1.5px solid transparent;
+  cursor:pointer;text-decoration:none;text-align:center;min-height:56px;overflow:hidden;
+  transition:transform .2s var(--ease),box-shadow .3s var(--ease),background .25s,border-color .25s,color .25s;
+}
+.btn:active{transform:translateY(1px) scale(.995)}
+.btn--primary{color:#fff;background:linear-gradient(135deg,var(--b600),var(--b500) 48%,#2A8AE8);box-shadow:0 10px 26px -10px rgba(17,96,184,.85), inset 0 1px 0 rgba(255,255,255,.24)}
+.btn--primary:hover{transform:translateY(-2px);box-shadow:0 18px 36px -12px rgba(17,96,184,.95), inset 0 1px 0 rgba(255,255,255,.3)}
+.btn--primary::after{content:"";position:absolute;top:0;left:-140%;width:58%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.36),transparent);transform:skewX(-18deg)}
+.js .btn--primary::after{animation:sheen 4.8s var(--ease) infinite}
+@keyframes sheen{0%,74%{left:-140%}90%,100%{left:150%}}
+.btn--pulse::before{content:"";position:absolute;inset:0;border-radius:999px;border:2px solid var(--b400);opacity:0}
+.js .btn--pulse::before{animation:ring 2.9s var(--ease) infinite}
+@keyframes ring{0%{transform:scale(1);opacity:.68}70%,100%{transform:scale(1.2);opacity:0}}
+.btn--ghost{background:transparent;color:var(--b800);border-color:var(--b200)}
+.btn--ghost:hover{background:#fff;border-color:var(--b500);transform:translateY(-1px)}
+.sec--dk .btn--ghost,.strip .btn--ghost{color:#fff;border-color:rgba(255,255,255,.34)}
+.sec--dk .btn--ghost:hover,.strip .btn--ghost:hover{background:rgba(255,255,255,.09);border-color:#fff}
+.btn--wa{background:var(--wa-dk);color:#fff;box-shadow:0 10px 24px -12px rgba(18,140,126,.9)}
+.btn--wa:hover{background:#0f7a6c;transform:translateY(-2px)}
+.btn--wa-out{background:var(--surface);color:var(--b900);border-color:var(--line)}
+.btn--wa-out:hover{border-color:var(--wa);background:#F4FFF8}
+.btn--sm{padding:12px 22px;min-height:46px;font-size:.88rem}
+.btn--lg{padding:21px 36px;min-height:62px;font-size:1.02rem}
+.btn--block{width:100%}
+@media (prefers-reduced-motion:reduce){.js .btn--primary::after,.js .btn--pulse::before{animation:none}}
+
+/* ---------------- Header ---------------- */
+.hdr{position:sticky;top:0;z-index:80;background:rgba(247,250,253,.86);backdrop-filter:saturate(160%) blur(14px);border-bottom:1px solid transparent;transition:box-shadow .3s,border-color .3s}
+.hdr.stuck{border-bottom-color:var(--line);box-shadow:0 8px 28px -22px rgba(10,27,45,.7)}
+.hdr__in{display:flex;align-items:center;gap:16px;height:74px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);flex:0 0 auto}
+.brand__mark{width:36px;height:36px;flex:0 0 auto}
+.brand__name{font-size:1.06rem;font-weight:700;letter-spacing:-.03em;line-height:1.1}
+.brand__name span{color:var(--b500);font-weight:600}
+.nav{display:flex;align-items:center;gap:26px;margin-left:auto}
+.nav a{color:var(--ink2);text-decoration:none;font-size:.89rem;font-weight:500;transition:color .2s}
+.nav a:hover{color:var(--b600)}
+.hdr__cta{display:flex;align-items:center;gap:10px;flex:0 0 auto}
+.lang{display:inline-flex;background:var(--b100);border-radius:999px;padding:3px;gap:2px}
+.lang button{font-family:inherit;font-size:.75rem;font-weight:600;letter-spacing:.04em;border:0;background:transparent;color:var(--b700);padding:8px 12px;border-radius:999px;cursor:pointer;transition:background .2s,color .2s}
+.lang button[aria-pressed="true"]{background:#fff;color:var(--b900);box-shadow:var(--sh-s)}
+@media (max-width:1040px){.nav{display:none}.hdr__in{height:64px}.hdr__cta .btn{display:none}.hdr__cta{margin-left:auto}}
+
+/* ---------------- Hero ---------------- */
+.hero{padding:clamp(40px,4.6vw,74px) 0 clamp(52px,5.6vw,86px);position:relative;overflow:hidden}
+.hero__bg{position:absolute;inset:0;pointer-events:none;z-index:0}
+.hero__bg::before{content:"";position:absolute;width:880px;height:880px;left:-260px;top:-420px;border-radius:50%;background:radial-gradient(closest-side,rgba(21,115,214,.13),transparent 70%)}
+.hero__bg::after{content:"";position:absolute;width:680px;height:680px;right:-220px;top:-140px;border-radius:50%;background:radial-gradient(closest-side,rgba(0,194,215,.11),transparent 70%)}
+.hero__grid{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,3.6vw,60px);align-items:center}
+.flag{display:inline-flex;align-items:center;gap:9px;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:6px 15px 6px 7px;font-size:.78rem;font-weight:500;color:var(--b800);margin-bottom:18px;box-shadow:var(--sh-s)}
+.flag b{display:inline-flex;align-items:center;gap:6px;background:var(--b50);color:var(--b600);border-radius:999px;padding:4px 10px;font-size:.7rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase}
+.dot-live{width:7px;height:7px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 3px rgba(87,215,133,.25)}
+.hero h1{margin-bottom:.4em}
+.hero h1 em{font-style:normal;background:linear-gradient(100deg,var(--b500),var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .lede{margin-bottom:26px}
+.hero__ctas{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:16px}
+.hero__micro{display:flex;align-items:center;gap:8px;color:var(--ink3);font-size:.82rem;margin-bottom:26px}
+.pills{display:flex;flex-wrap:wrap;gap:8px}
+.pill{display:inline-flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--line);color:var(--b900);padding:8px 14px;border-radius:10px;font-size:.79rem;font-weight:500;box-shadow:var(--sh-s)}
+.pill svg{color:var(--b500);flex:0 0 auto}
+.hero__vis{position:relative}
+@media (max-width:920px){
+  .hero__grid{grid-template-columns:1fr}
+  .hero__vis{order:-1;max-width:440px;margin-inline:auto;width:100%}
+  .hero__ctas .btn{width:100%}
+}
+
+.vis{position:relative;border-radius:var(--r-xl);overflow:hidden;background:linear-gradient(155deg,#0A3468,#06213F 55%,#062A52);box-shadow:var(--sh-l);padding:24px;aspect-ratio:1/1.02}
+.vis__grid{position:absolute;inset:0;opacity:.5;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:34px 34px}
+.vis__mol{position:absolute;inset:0;display:grid;place-items:center}
+.vfloat{position:absolute;background:rgba(255,255,255,.97);border-radius:var(--r);box-shadow:var(--sh);padding:12px 16px;display:flex;align-items:center;gap:11px;z-index:2}
+.vfloat strong{font-size:.82rem;display:block;line-height:1.35;font-weight:600}
+.vfloat span{font-size:.72rem;color:var(--ink3);line-height:1.4}
+.vfloat__ic{width:34px;height:34px;border-radius:9px;display:grid;place-items:center;flex:0 0 auto}
+.vfloat--a{left:-20px;top:12%}
+.vfloat--b{right:-16px;bottom:15%}
+@media (max-width:920px){.vfloat--a{left:-4px}.vfloat--b{right:-4px}}
+
+/* ---------------- Stat band ---------------- */
+.band{background:var(--b900);color:#fff}
+.band__in{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:32px 0}
+.band__i{text-align:center;padding:0 14px;border-left:1px solid rgba(255,255,255,.12)}
+.band__i:first-child{border-left:0}
+.band__i b{display:block;font-size:clamp(1.55rem,1.25rem + 1.3vw,2.2rem);font-weight:700;line-height:1.1;letter-spacing:-.03em;background:linear-gradient(100deg,#fff,var(--cyan-lt));-webkit-background-clip:text;background-clip:text;color:transparent}
+.band__i span{font-size:.78rem;color:rgba(255,255,255,.62);font-weight:400;line-height:1.5;display:block}
+@media (max-width:760px){.band__in{grid-template-columns:1fr 1fr;gap:22px 10px}.band__i:nth-child(3){border-left:0}}
+
+/* ---------------- Cards / grids ---------------- */
+.grid{display:grid;gap:clamp(13px,1.5vw,19px)}
+.grid--2{grid-template-columns:repeat(2,1fr)}
+.grid--3{grid-template-columns:repeat(3,1fr)}
+.grid--4{grid-template-columns:repeat(4,1fr)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-l);padding:clamp(21px,2.2vw,28px);box-shadow:var(--sh-s);transition:transform .3s var(--ease),box-shadow .3s var(--ease),border-color .3s}
+.card:hover{transform:translateY(-4px);box-shadow:var(--sh);border-color:var(--b200)}
+.card h3{margin-bottom:.42em}
+.card p{margin:0;color:var(--ink2);font-size:.9rem;line-height:1.7}
+.ic{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(140deg,var(--b50),var(--b100));color:var(--b600);border:1px solid var(--b100);margin-bottom:16px}
+.sec--dk .card{background:rgba(255,255,255,.045);border-color:rgba(255,255,255,.11)}
+.sec--dk .card p{color:rgba(255,255,255,.7)}
+.sec--dk .ic{background:rgba(0,194,215,.12);border-color:rgba(0,194,215,.25);color:var(--cyan-lt)}
+@media (max-width:960px){.grid--4{grid-template-columns:repeat(2,1fr)}.grid--3{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.grid--4,.grid--3,.grid--2{grid-template-columns:1fr}}
+
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(15px,1.9vw,22px)}
+.panel{border-radius:var(--r-l);padding:clamp(22px,2.4vw,32px);border:1px solid var(--line);background:var(--surface)}
+.panel--bad{background:#FFF7F5;border-color:#F6DED6}
+.panel--good{background:linear-gradient(160deg,var(--b50),#fff);border-color:var(--b100)}
+.panel h3{display:flex;align-items:center;gap:10px}
+.plist{list-style:none;padding:0;margin:16px 0 0;display:grid;gap:12px}
+.plist li{display:flex;gap:11px;align-items:flex-start;font-size:.89rem;color:var(--ink2);line-height:1.65}
+.plist svg{flex:0 0 auto;margin-top:4px}
+.panel--bad .plist svg{color:#C4573A}
+.panel--good .plist svg{color:var(--b500)}
+@media (max-width:800px){.split{grid-template-columns:1fr}}
+
+/* Category tiles */
+.cats{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(12px,1.4vw,16px)}
+.cat{border-radius:var(--r-l);padding:22px 20px;border:1px solid rgba(255,255,255,.11);background:rgba(255,255,255,.045);transition:transform .3s var(--ease),background .3s,border-color .3s;text-decoration:none;color:#fff;display:block}
+.cat:hover{transform:translateY(-4px);background:rgba(255,255,255,.085);border-color:rgba(0,194,215,.42)}
+.cat h3{font-size:.98rem;margin-bottom:.3em}
+.cat p{margin:0;font-size:.8rem;color:rgba(255,255,255,.62);line-height:1.6}
+.cat__ic{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;background:rgba(0,194,215,.14);color:var(--cyan-lt);margin-bottom:14px}
+@media (max-width:900px){.cats{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.cats{grid-template-columns:1fr}}
+
+/* Ratings */
+.ratings{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:700px;margin:0 auto}
+.rating{display:flex;flex-direction:column;align-items:center;gap:3px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:20px 14px;text-decoration:none;color:inherit;box-shadow:var(--sh-s);transition:transform .25s var(--ease),box-shadow .25s,border-color .25s}
+a.rating:hover{transform:translateY(-3px);box-shadow:var(--sh);border-color:var(--b200)}
+.rating__p{font-size:.71rem;font-weight:600;letter-spacing:.11em;text-transform:uppercase;color:var(--ink3)}
+.rating__n{font-size:1.85rem;font-weight:700;line-height:1.15;letter-spacing:-.03em;color:var(--b900)}
+.stars{display:flex;gap:2px;color:#F0A427}
+@media (max-width:560px){.ratings{grid-template-columns:1fr;max-width:320px}}
+
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin-top:clamp(28px,3.2vw,40px)}
+.fact{display:flex;gap:12px;align-items:flex-start;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:18px 20px}
+.fact svg{flex:0 0 auto;color:var(--b500);margin-top:3px}
+.fact strong{display:block;font-size:.88rem;font-weight:600;line-height:1.4}
+.fact span{font-size:.79rem;color:var(--ink3);line-height:1.55;display:block}
+@media (max-width:860px){.facts{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.facts{grid-template-columns:1fr}}
+
+/* ---------------- FAQ ---------------- */
+.faq{max-width:830px;margin-inline:auto}
+.acc{border-bottom:1px solid var(--line)}
+.acc:first-child{border-top:1px solid var(--line)}
+.acc__btn{width:100%;display:flex;align-items:center;justify-content:space-between;gap:20px;text-align:left;background:none;border:0;padding:22px 4px;cursor:pointer;font-family:inherit;font-size:.96rem;font-weight:600;line-height:1.5;color:var(--ink);transition:color .2s}
+.acc__btn:hover{color:var(--b600)}
+.acc__ic{flex:0 0 auto;width:26px;height:26px;border-radius:8px;background:var(--b50);display:grid;place-items:center;color:var(--b600);transition:transform .3s var(--ease),background .2s}
+.acc__btn[aria-expanded="true"] .acc__ic{transform:rotate(45deg);background:var(--b100)}
+.acc__p{overflow:hidden;height:0;transition:height .35s var(--ease)}
+.acc__in{padding:0 54px 22px 4px;color:var(--ink2);font-size:.9rem;line-height:1.75}
+.acc__in p:last-child{margin-bottom:0}
+@media (max-width:600px){.acc__in{padding-right:8px}}
+
+/* ---------------- CTA strip ---------------- */
+.strip{background:linear-gradient(135deg,var(--b800),var(--b900) 60%,#04182F);border-radius:var(--r-xl);padding:clamp(30px,3.8vw,56px);text-align:center;color:#fff;position:relative;overflow:hidden;box-shadow:var(--sh-l)}
+.strip::after{content:"";position:absolute;width:580px;height:580px;right:-180px;top:-250px;border-radius:50%;background:radial-gradient(closest-side,rgba(0,194,215,.26),transparent 70%);pointer-events:none}
+.strip>*{position:relative;z-index:1}
+.strip h2{margin-bottom:.35em;color:#fff}
+.strip p{color:rgba(255,255,255,.76);max-width:56ch;margin-inline:auto;font-size:.97rem}
+.strip__ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:26px}
+@media (max-width:520px){.strip__ctas .btn{width:100%}}
+
+/* ---------------- Footer ---------------- */
+.ftr{background:var(--b900);color:rgba(255,255,255,.68);padding:clamp(44px,4.6vw,66px) 0 30px;font-size:.85rem}
+.ftr a{color:rgba(255,255,255,.8);text-decoration:none}
+.ftr a:hover{color:#fff;text-decoration:underline}
+.ftr__grid{display:grid;grid-template-columns:1.7fr 1fr 1fr 1.3fr;gap:30px;padding-bottom:30px;border-bottom:1px solid rgba(255,255,255,.12)}
+.ftr h4{color:#fff;font-size:.74rem;letter-spacing:.13em;text-transform:uppercase;margin-bottom:14px;font-weight:600}
+.ftr ul{list-style:none;padding:0;margin:0;display:grid;gap:9px}
+.ftr .brand{color:#fff;margin-bottom:12px}
+.ftr .brand__name span{color:var(--cyan-lt)}
+.legal{padding-top:22px;font-size:.75rem;color:rgba(255,255,255,.52);line-height:1.7}
+.legal strong{color:rgba(255,255,255,.85)}
+.legal p{margin-bottom:.75em}
+.ftr__btm{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-top:12px;font-size:.75rem}
+@media (max-width:820px){.ftr__grid{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.ftr__grid{grid-template-columns:1fr}}
+
+.ruo{display:flex;gap:13px;align-items:flex-start;max-width:880px;margin:clamp(26px,3.2vw,40px) auto 0;background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--b500);border-radius:var(--r);padding:17px 21px;font-size:.81rem;color:var(--ink2);line-height:1.7}
+.ruo svg{flex:0 0 auto;color:var(--b500);margin-top:3px}
+.sec--dk .ruo{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.14);border-left-color:var(--cyan);color:rgba(255,255,255,.72)}
+
+/* ---------------- Sticky / FAB ---------------- */
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:90;display:none;gap:10px;background:rgba(255,255,255,.95);backdrop-filter:blur(14px);border-top:1px solid var(--line);padding:10px 14px calc(10px + env(safe-area-inset-bottom));transform:translateY(115%);transition:transform .35s var(--ease);box-shadow:0 -10px 34px -22px rgba(10,27,45,.8)}
+.sticky.on{transform:none}
+.sticky .btn{flex:1;padding-inline:14px;font-size:.9rem}
+.sticky .btn--wa{flex:0 0 56px;padding:0}
+@media (max-width:1040px){.sticky{display:flex}body{padding-bottom:80px}}
+
+.fab{position:fixed;right:24px;bottom:24px;z-index:85;display:flex;flex-direction:column;gap:12px;align-items:flex-end}
+.fab__b{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;text-decoration:none;border:0;cursor:pointer;position:relative;transition:transform .25s var(--ease),box-shadow .25s}
+.fab__b--wa{background:var(--wa-dk);color:#fff;box-shadow:0 14px 32px -12px rgba(18,140,126,.9)}
+.fab__b--q{background:linear-gradient(135deg,var(--b600),var(--b500));color:#fff;box-shadow:0 14px 32px -12px rgba(17,96,184,.95)}
+.fab__b:hover{transform:scale(1.08)}
+.fab__b--q::before{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid var(--b400);opacity:0}
+.js .fab__b--q::before{animation:ring 2.9s var(--ease) infinite}
+.fab__lbl{position:absolute;right:70px;top:50%;transform:translateY(-50%) translateX(8px);background:var(--ink);color:#fff;font-size:.77rem;font-weight:500;padding:9px 14px;border-radius:9px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .25s,transform .25s var(--ease)}
+.fab__b:hover .fab__lbl{opacity:1;transform:translateY(-50%)}
+@media (max-width:1040px){.fab{display:none}}
+@media (prefers-reduced-motion:reduce){.js .fab__b--q::before{animation:none}}
+
+/* ---------------- Reveal ---------------- */
+.js .rv{opacity:0;transform:translateY(20px);transition:opacity .65s var(--ease),transform .65s var(--ease)}
+.js .rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none;transition:none}}
+
+/* ==========================================================================
+   MODAL
+   ========================================================================== */
+.ov{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(6,20,36,.62)}
+.ov.open{display:flex}
+.js .ov.open{animation:ovIn .3s var(--ease)}
+@keyframes ovIn{from{opacity:0}to{opacity:1}}
+.ov__bd{position:absolute;inset:0;backdrop-filter:blur(10px) saturate(120%);-webkit-backdrop-filter:blur(10px) saturate(120%)}
+.mod{position:relative;z-index:1;background:var(--surface);border-radius:var(--r-xl);width:100%;max-width:552px;max-height:92vh;overflow-y:auto;box-shadow:0 40px 100px -30px rgba(4,18,36,.75);padding:clamp(22px,2.5vw,32px)}
+.js .ov.open .mod{animation:modIn .4s var(--ease)}
+@keyframes modIn{from{opacity:0;transform:translateY(26px) scale(.96)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.js .ov.open,.js .ov.open .mod{animation:none}}
+
+.mod__x{position:absolute;top:14px;right:14px;width:38px;height:38px;border-radius:11px;border:0;background:var(--b50);color:var(--ink2);cursor:pointer;display:grid;place-items:center;transition:background .2s,color .2s;z-index:3}
+.mod__x:hover{background:var(--b100);color:var(--b800)}
+.mod__top{margin-bottom:16px;padding-right:44px}
+.mod__kick{display:inline-flex;align-items:center;gap:8px;font-size:.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--b600);margin-bottom:9px}
+.mod__t{font-size:clamp(1.22rem,1.1rem + .7vw,1.55rem);font-weight:700;letter-spacing:-.028em;line-height:1.2;margin:0 0 5px}
+.mod__s{font-size:.84rem;color:var(--ink3);margin:0;line-height:1.6}
+.mod__meta{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:8px}
+.mod__step{font-size:.73rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3)}
+.mod__left{font-size:.73rem;font-weight:500;color:var(--b600)}
+.mod__back{border:0;background:none;font-family:inherit;font-size:.8rem;font-weight:500;color:var(--ink3);cursor:pointer;display:inline-flex;align-items:center;gap:5px;padding:4px 6px;border-radius:8px}
+.mod__back:hover{color:var(--b600)}
+.mod__back[hidden]{display:none}
+
+.pbar{height:8px;background:var(--b100);border-radius:999px;overflow:hidden}
+.pbar__f{height:100%;width:20%;border-radius:999px;background:linear-gradient(90deg,var(--b600),var(--b500) 55%,var(--cyan));transition:width .5s var(--ease);position:relative;overflow:hidden}
+.pbar__f::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent,rgba(255,255,255,.5),transparent);transform:translateX(-100%)}
+.js .pbar__f::after{animation:shimmer 2.2s linear infinite}
+@keyframes shimmer{to{transform:translateX(220%)}}
+@media (prefers-reduced-motion:reduce){.js .pbar__f::after{animation:none}}
+.dots{display:flex;gap:6px;margin:11px 0 18px}
+.dots i{flex:1;height:4px;border-radius:2px;background:var(--b100);transition:background .35s var(--ease)}
+.dots i.done{background:var(--b500)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:15px}
+.chip{background:var(--b50);border:1px solid var(--b100);color:var(--b800);border-radius:8px;padding:5px 11px;font-size:.73rem;font-weight:500}
+.js .chip{animation:chipIn .3s var(--ease)}
+@keyframes chipIn{from{opacity:0;transform:scale(.85)}to{opacity:1;transform:none}}
+
+.mq{font-size:clamp(1.15rem,1.05rem + .6vw,1.42rem);font-weight:700;line-height:1.25;letter-spacing:-.026em;margin:0 0 5px}
+.mh{font-size:.83rem;color:var(--ink3);margin:0 0 18px;line-height:1.6}
+.opts{display:grid;gap:9px}
+.opt{display:flex;align-items:center;gap:13px;width:100%;text-align:left;background:var(--surface);border:1.5px solid var(--line);border-radius:var(--r);padding:15px 16px;font-family:inherit;font-size:.93rem;font-weight:500;color:var(--ink);cursor:pointer;transition:border-color .2s,background .2s,transform .18s var(--ease),box-shadow .2s}
+.opt:hover{border-color:var(--b500);background:var(--b50);transform:translateX(3px);box-shadow:0 6px 18px -12px rgba(17,96,184,.8)}
+.opt.sel{border-color:var(--b600);background:var(--b50);box-shadow:0 0 0 4px rgba(21,115,214,.1)}
+.opt__d{width:22px;height:22px;border-radius:7px;border:2px solid var(--b200);flex:0 0 auto;display:grid;place-items:center;transition:border-color .2s,background .2s}
+.opt:hover .opt__d,.opt.sel .opt__d{border-color:var(--b600)}
+.opt.sel .opt__d{background:var(--b600)}
+.opt.sel .opt__d::after{content:"";width:9px;height:5px;border-left:2px solid #fff;border-bottom:2px solid #fff;transform:rotate(-45deg) translate(1px,-1px)}
+.opt__t{flex:1}
+.opt__s{display:block;font-size:.76rem;color:var(--ink3);font-weight:400;margin-top:1px;line-height:1.45}
+
+.fld{margin-bottom:13px}
+.fld label{display:block;font-size:.8rem;font-weight:600;margin-bottom:6px;color:var(--ink2)}
+.fld input{width:100%;font-family:inherit;font-size:16px;font-weight:400;color:var(--ink);padding:14px 15px;border:1.5px solid var(--line);border-radius:var(--r-s);background:var(--surface);transition:border-color .2s,box-shadow .2s}
+.fld input:focus{border-color:var(--b500);outline:none;box-shadow:0 0 0 4px rgba(21,115,214,.12)}
+.fld input[aria-invalid="true"]{border-color:#C4573A;background:#FFF7F5}
+.err{display:none;font-size:.76rem;color:#A93A22;margin-top:5px;font-weight:500}
+.err.show{display:block}
+.chk{display:flex;gap:11px;align-items:flex-start;margin:14px 0 4px;font-size:.77rem;color:var(--ink2);line-height:1.6}
+.chk input{width:19px;height:19px;flex:0 0 auto;margin-top:2px;accent-color:var(--b600)}
+.hp{position:absolute!important;left:-9999px;opacity:0;height:0;width:0}
+.mfoot{margin-top:13px;text-align:center;font-size:.73rem;color:var(--ink3);display:flex;align-items:center;justify-content:center;gap:7px}
+
+.pane{display:none}
+.pane.on{display:block}
+.js .pane.on{animation:paneIn .38s var(--ease)}
+@keyframes paneIn{from{opacity:0;transform:translateX(14px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.js .pane.on{animation:none}}
+
+.done{text-align:center;padding:6px 0}
+.done__r{width:74px;height:74px;margin:0 auto 18px;border-radius:20px;background:linear-gradient(140deg,var(--b50),var(--b100));display:grid;place-items:center;color:var(--b600);border:1px solid var(--b100)}
+.js .done__r{animation:pop .5s var(--ease)}
+@keyframes pop{0%{transform:scale(.5);opacity:0}60%{transform:scale(1.08)}100%{transform:scale(1);opacity:1}}
+.done h3{font-size:clamp(1.22rem,1.1rem + .7vw,1.55rem);margin-bottom:.35em}
+.done p{color:var(--ink2);font-size:.9rem}
+.recap{text-align:left;background:var(--b50);border:1px solid var(--b100);border-radius:var(--r);padding:15px 17px;margin:16px 0 18px}
+.recap dl{margin:0;display:grid;gap:8px}
+.recap div{display:flex;justify-content:space-between;gap:14px;font-size:.82rem}
+.recap dt{color:var(--ink3)}
+.recap dd{margin:0;font-weight:600;color:var(--b900);text-align:right}
+</style>
+<script>document.documentElement.className += " js";</script>
+</head>
+<body>
+<a class="skip" href="#enquiry" data-i18n="skip">Skip to the availability request</a>
+
+<!-- ============================ HEADER ============================ -->
+<header class="hdr" id="hdr">
+  <div class="wrap hdr__in">
+    <a class="brand" href="#top" aria-label="Peptides Costa Rica">
+      <svg class="brand__mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <rect width="40" height="40" rx="11" fill="#06213F"/>
+        <circle cx="14" cy="14" r="3.4" fill="#00C2D7"/><circle cx="26.5" cy="17" r="3.4" fill="#3D96EE"/><circle cx="19" cy="27" r="3.4" fill="#1573D6"/>
+        <path d="M14 14l12.5 3M26.5 17L19 27M19 27l-5-13" stroke="#3D96EE" stroke-width="1.5" opacity=".75"/>
+      </svg>
+      <span class="brand__name">Peptides<span> Costa Rica</span></span>
+    </a>
+
+    <nav class="nav" aria-label="Main">
+      <a href="#difference" data-i18n="nav.diff">Why us</a>
+      <a href="#categories" data-i18n="nav.cats">Categories</a>
+      <a href="#quality" data-i18n="nav.quality">Quality</a>
+      <a href="#trust" data-i18n="nav.trust">Reviews</a>
+      <a href="#faq" data-i18n="nav.faq">FAQ</a>
+    </nav>
+
+    <div class="hdr__cta">
+      <div class="lang" role="group" aria-label="Language / Idioma">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="es" aria-pressed="false">ES</button>
+      </div>
+      <button class="btn btn--primary btn--sm" data-open data-cta="header" type="button" data-i18n="cta.header">Check availability</button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ============================ HERO ============================ -->
+<section class="hero">
+  <div class="hero__bg" aria-hidden="true"></div>
+  <div class="wrap hero__grid">
+    <div>
+      <span class="flag">
+        <b><span class="dot-live"></span><span data-i18n="hero.flag.b">In stock</span></b>
+        <span data-i18n="hero.flag.t">Held in Costa Rica — no customs, no import wait</span>
+      </span>
+
+      <h1><span data-i18n="hero.h1a">Premium research peptides,</span> <em data-i18n="hero.h1b">already in the country.</em></h1>
+
+      <p class="lede" data-i18n="hero.sub">We are your local source in Costa Rica. Because stock is held here, there are no cross-border delays and no hidden import fees — just verified availability, transparent pricing and a direct line to a real person. Certificates of Analysis are available on request.</p>
+
+      <div class="hero__ctas">
+        <button class="btn btn--primary btn--lg btn--pulse" data-open data-cta="hero" type="button">
+          <span data-i18n="cta.primary">Check availability &amp; pricing</span>
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h13m0 0-5.5-5.5M18 12l-5.5 5.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <a class="btn btn--wa-out btn--lg" href="#" data-wa data-cta="hero-wa">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.09c-.24.68-1.42 1.3-1.96 1.35-.5.05-.98.23-3.32-.69-2.79-1.1-4.57-3.95-4.71-4.13-.14-.19-1.13-1.5-1.13-2.86 0-1.36.71-2.03.96-2.31.25-.28.55-.35.73-.35.18 0 .37 0 .53.01.17.01.4-.06.62.48.24.57.8 1.97.87 2.11.07.14.12.31.02.5-.09.19-.14.31-.28.47-.14.16-.29.36-.42.48-.14.14-.28.29-.12.57.16.28.72 1.18 1.54 1.91 1.06.94 1.95 1.24 2.23 1.38.28.14.44.12.6-.07.17-.19.7-.81.88-1.09.19-.28.37-.23.63-.14.25.09 1.65.78 1.93.92.28.14.47.21.54.33.07.11.07.65-.17 1.33Z"/></svg>
+          <span data-i18n="cta.wa">WhatsApp us</span>
+        </a>
+      </div>
+
+      <p class="hero__micro">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 22s8-4 8-10V5.5L12 2 4 5.5V12c0 6 8 10 8 10Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span data-i18n="hero.micro">No minimum order &middot; Availability confirmed before payment &middot; 15% off 5+ vials</span>
+      </p>
+
+      <div class="pills">
+        <span class="pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="hero.p1">Laboratory-tested purity</span></span>
+        <span class="pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="3" stroke="currentColor" stroke-width="1.8"/><path d="M8 9h8M8 13h8M8 17h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span data-i18n="hero.p2">COAs available</span></span>
+        <span class="pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 12h17M12 3.2c2.2 2.4 3.3 5.5 3.3 8.8s-1.1 6.4-3.3 8.8c-2.2-2.4-3.3-5.5-3.3-8.8S9.8 5.6 12 3.2Z" stroke="currentColor" stroke-width="1.6"/></svg><span data-i18n="hero.p3">English &amp; Español</span></span>
+      </div>
+    </div>
+
+    <div class="hero__vis">
+      <div class="vis">
+        <div class="vis__grid" aria-hidden="true"></div>
+        <div class="vis__mol" aria-hidden="true">
+          <svg viewBox="0 0 340 340" width="86%" role="img" aria-label="Molecular structure illustration">
+            <g stroke="#3D96EE" stroke-width="1.4" opacity=".55" fill="none">
+              <path d="M80 96 168 62 258 108 236 208 146 246 74 190Z"/>
+              <path d="M168 62v96M80 96l88 62M258 108l-90 50M236 208l-68-50M146 246l22-88M74 190l94-32"/>
+            </g>
+            <circle cx="168" cy="158" r="15" fill="#00C2D7" opacity=".95"/>
+            <circle cx="80" cy="96" r="9" fill="#3D96EE"/><circle cx="168" cy="62" r="9" fill="#5FE3EF"/>
+            <circle cx="258" cy="108" r="9" fill="#3D96EE"/><circle cx="236" cy="208" r="9" fill="#1573D6"/>
+            <circle cx="146" cy="246" r="9" fill="#5FE3EF"/><circle cx="74" cy="190" r="9" fill="#1573D6"/>
+            <circle cx="168" cy="158" r="46" fill="none" stroke="#00C2D7" stroke-width="1" opacity=".35"/>
+            <circle cx="168" cy="158" r="72" fill="none" stroke="#00C2D7" stroke-width="1" opacity=".18"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="vfloat vfloat--a">
+        <span class="vfloat__ic" style="background:#E7F7F9;color:#0E8FA0">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 3h6v5l4 9.5a2.5 2.5 0 0 1-2.3 3.5H7.3A2.5 2.5 0 0 1 5 17.5L9 8V3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+        </span>
+        <div><strong data-i18n="float.a.t">Tested for purity</strong><span data-i18n="float.a.s">COA available on request</span></div>
+      </div>
+
+      <div class="vfloat vfloat--b">
+        <span class="vfloat__ic" style="background:#E9F3FE;color:#1160B8">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 8h13v9H3zM16 11h3.5l1.5 3v3h-5" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="7" cy="18" r="1.8" stroke="currentColor" stroke-width="1.8"/><circle cx="17.5" cy="18" r="1.8" stroke="currentColor" stroke-width="1.8"/></svg>
+        </span>
+        <div><strong data-i18n="float.b.t">Delivered in Costa Rica</strong><span data-i18n="float.b.s">Nothing crosses a border</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ BAND ============================ -->
+<section class="band" aria-label="Key figures">
+  <div class="wrap band__in">
+    <div class="band__i"><b data-count="40" data-suffix="+">40+</b><span data-i18n="band.1">Peptides in the catalogue</span></div>
+    <div class="band__i"><b data-count="15" data-suffix="%">15%</b><span data-i18n="band.2">Off 5+ vials of the same product</span></div>
+    <div class="band__i"><b>₡0</b><span data-i18n="band.3">Import fees or customs charges</span></div>
+    <div class="band__i"><b data-count="4">4</b><span data-i18n="band.4">Ways to pay, including cash</span></div>
+  </div>
+</section>
+
+<!-- ============================ WE DO THINGS DIFFERENTLY ============================ -->
+<section class="sec" id="difference">
+  <div class="wrap">
+    <div class="sec-head center rv">
+      <p class="eyebrow" data-i18n="d.eyebrow">We do things differently</p>
+      <h2 data-i18n="d.h2">Ordering from abroad costs you weeks. Ordering here costs you a message.</h2>
+      <p class="lede" data-i18n="d.sub">We operate exclusively within Costa Rica. That single decision removes almost everything that goes wrong with peptide sourcing.</p>
+    </div>
+
+    <div class="split">
+      <div class="panel panel--bad rv">
+        <h3>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="#C4573A" stroke-width="1.8"/><path d="M12 7.5v5.5M12 16.2v.3" stroke="#C4573A" stroke-width="2.2" stroke-linecap="round"/></svg>
+          <span data-i18n="d.bad.t">Importing it yourself</span>
+        </h3>
+        <ul class="plist">
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M7 7l10 10M17 7 7 17" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg><span data-i18n="d.bad.1">Weeks in transit, then however long customs decides to take.</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M7 7l10 10M17 7 7 17" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg><span data-i18n="d.bad.2">Import duties and handling fees that appear after you have already paid.</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M7 7l10 10M17 7 7 17" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg><span data-i18n="d.bad.3">No way to confirm a product is actually in stock before you pay for it.</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M7 7l10 10M17 7 7 17" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg><span data-i18n="d.bad.4">Support in a different time zone, in a different language, if it answers at all.</span></li>
+        </ul>
+      </div>
+
+      <div class="panel panel--good rv">
+        <h3>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="#1573D6" stroke-width="1.8"/><path d="m8.2 12.3 2.6 2.6 5-5.4" stroke="#1573D6" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span data-i18n="d.good.t">Buying from local stock</span>
+        </h3>
+        <ul class="plist">
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="d.good.1">No cross-border delays. The stock is already inside the country.</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="d.good.2">No hidden import fees. The price you are quoted is the price you pay.</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="d.good.3">Availability verified before payment, every time, so nothing is a gamble.</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="d.good.4">Direct communication with a real person, in English or Spanish.</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:clamp(28px,3.2vw,42px)" class="rv">
+      <button class="btn btn--primary btn--lg btn--pulse" data-open data-cta="difference" type="button">
+        <span data-i18n="cta.diff">Ask what is in stock today</span>
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h13m0 0-5.5-5.5M18 12l-5.5 5.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ CATEGORIES ============================ -->
+<section class="sec sec--dk" id="categories">
+  <div class="wrap">
+    <div class="sec-head center rv">
+      <p class="eyebrow" data-i18n="c.eyebrow">Shop by category</p>
+      <h2 data-i18n="c.h2">Over forty peptides, grouped by research application</h2>
+      <p class="lede" data-i18n="c.sub">Tell us the category you are working in and we will come back with what is currently available, the price per vial, and the Certificate of Analysis if you want to see it first.</p>
+    </div>
+
+    <div class="cats">
+      <div class="cat rv">
+        <span class="cat__ic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 19V5m0 14h16" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/><path d="M7.5 15.5 11 10l3.2 3.6L18 7.5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <h3 data-i18n="c.1.t">Weight Loss</h3><p data-i18n="c.1.b">Compounds studied in fat metabolism and appetite research.</p>
+      </div>
+      <div class="cat rv">
+        <span class="cat__ic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.5 9v6M17.5 9v6M4 10.5v3M20 10.5v3M6.5 12h11" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg></span>
+        <h3 data-i18n="c.2.t">Muscle Growth</h3><p data-i18n="c.2.b">Protein synthesis and growth signalling research.</p>
+      </div>
+      <div class="cat rv">
+        <span class="cat__ic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 20s7-4 7-9a4 4 0 0 0-7-2.6A4 4 0 0 0 5 11c0 5 7 9 7 9Z" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/></svg></span>
+        <h3 data-i18n="c.3.t">Healing &amp; Recovery</h3><p data-i18n="c.3.b">Wound healing, tendon, ligament and soft-tissue models.</p>
+      </div>
+      <div class="cat rv">
+        <span class="cat__ic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.9"/><path d="M12 7.5V12l3 2" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg></span>
+        <h3 data-i18n="c.4.t">Anti-Aging</h3><p data-i18n="c.4.b">Senescence, telomere and cellular-longevity research.</p>
+      </div>
+      <div class="cat rv">
+        <span class="cat__ic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9.5 20.5h5M8 15a6 6 0 1 1 8 0c-.9.8-1.3 1.6-1.4 2.5h-5.2C9.3 16.6 8.9 15.8 8 15Z" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/></svg></span>
+        <h3 data-i18n="c.5.t">Cognitive</h3><p data-i18n="c.5.b">Memory, neuroprotection and stress-response research.</p>
+      </div>
+      <div class="cat rv">
+        <span class="cat__ic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M13 2.5 4.5 13.5H11l-1 8 8.5-11H12l1-7.5Z" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/></svg></span>
+        <h3 data-i18n="c.6.t">Energy</h3><p data-i18n="c.6.b">Mitochondrial function and cellular energy research.</p>
+      </div>
+      <div class="cat rv">
+        <span class="cat__ic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h4l2-4 3 8 2-4h5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <h3 data-i18n="c.7.t">Cardiovascular</h3><p data-i18n="c.7.b">Circulatory and cardiac research applications.</p>
+      </div>
+      <div class="cat rv">
+        <span class="cat__ic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.9"/><path d="M9 10.5h.01M15 10.5h.01M9 15c1.8 1.2 4.2 1.2 6 0" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg></span>
+        <h3 data-i18n="c.8.t">Skin &amp; Collagen</h3><p data-i18n="c.8.b">Collagen synthesis, pigmentation and barrier research.</p>
+      </div>
+    </div>
+
+    <div class="ruo rv">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 11v5.5M12 7.8v.3" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+      <span data-i18n="c.ruo"><strong>Research use only.</strong> Category names describe the fields in which these compounds are studied. They are not claims of any effect in humans. All products are supplied strictly for laboratory research and are not for human or veterinary use.</span>
+    </div>
+
+    <div style="text-align:center;margin-top:clamp(26px,3vw,38px)" class="rv">
+      <button class="btn btn--primary btn--lg" data-open data-cta="categories" type="button">
+        <span data-i18n="cta.cats">Tell us your category</span>
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h13m0 0-5.5-5.5M18 12l-5.5 5.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ QUALITY ============================ -->
+<section class="sec" id="quality">
+  <div class="wrap">
+    <div class="sec-head center rv">
+      <p class="eyebrow" data-i18n="q.eyebrow">Laboratory-tested purity</p>
+      <h2 data-i18n="q.h2">You should not have to take a supplier's word for it</h2>
+      <p class="lede" data-i18n="q.sub">Our peptides are sourced from certified laboratories, manufactured under strict quality control standards and tested for purity and consistency. Here is what that means in practice, and what you can ask to see.</p>
+    </div>
+
+    <div class="grid grid--4">
+      <div class="card rv">
+        <div class="ic"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 3h6v5l4 9.5a2.5 2.5 0 0 1-2.3 3.5H7.3A2.5 2.5 0 0 1 5 17.5L9 8V3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8 3h8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+        <h3 data-i18n="q.1.t">Certified laboratories</h3>
+        <p data-i18n="q.1.b">Every product is sourced from certified manufacturing facilities operating under documented quality control standards.</p>
+      </div>
+      <div class="card rv">
+        <div class="ic"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 19V5m0 14h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M7 15.5 11 9l3.4 4.2L18 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3 data-i18n="q.2.t">Tested for purity</h3>
+        <p data-i18n="q.2.b">Material is tested for purity and consistency so that what is on the label matches what is in the vial, batch after batch.</p>
+      </div>
+      <div class="card rv">
+        <div class="ic"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="3" stroke="currentColor" stroke-width="1.8"/><path d="M8 8h8M8 12h8M8 16h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+        <h3 data-i18n="q.3.t">Certificates of Analysis</h3>
+        <p data-i18n="q.3.b">COAs are available for our products. Ask for the one covering your order and we will send it — whether or not you go on to buy.</p>
+      </div>
+      <div class="card rv">
+        <div class="ic"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v6M12 3 9 6M12 3l3 3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><rect x="4" y="9" width="16" height="12" rx="3" stroke="currentColor" stroke-width="1.8"/><path d="M8 14h8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+        <h3 data-i18n="q.4.t">Controlled handling</h3>
+        <p data-i18n="q.4.b">Stock is held and handled under controlled conditions here in Costa Rica, so material is not sitting in three unknown warehouses first.</p>
+      </div>
+    </div>
+
+    <div class="ruo rv">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 22s8-4 8-10V5.5L12 2 4 5.5V12c0 6 8 10 8 10Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+      <span data-i18n="q.ruo">Testing covers the identity and purity of the material supplied. It is not a safety assessment, an efficacy claim, or an approval of any kind, and it does not qualify any compound for use in or on humans or animals.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ TRUST ============================ -->
+<section class="sec sec--tint" id="trust">
+  <div class="wrap">
+    <div class="sec-head center rv">
+      <p class="eyebrow" data-i18n="t.eyebrow">Your trusted peptide supplier</p>
+      <h2 data-i18n="t.h2">Rated by the customers who order here</h2>
+      <p class="lede" data-i18n="t.sub">We take pride in the trust and loyalty of our customers across Costa Rica. Our ratings are public — check them yourself before you order anything.</p>
+    </div>
+
+    <!-- Live rating widgets: replace each card with the platform's official embed
+         (Trustpilot TrustBox, Google Reviews widget, Facebook Page plugin)
+         so the figures update automatically. -->
+    <div class="ratings rv">
+      <a class="rating" href="https://www.trustpilot.com/review/peptidescostarica.net" target="_blank" rel="noopener" data-cta="rating-trustpilot">
+        <span class="rating__p" data-i18n="t.tp">Trustpilot</span>
+        <span class="rating__n">4.2</span>
+        <span class="stars" aria-label="4.2 out of 5"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9L12 2.6Z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9L12 2.6Z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9L12 2.6Z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9L12 2.6Z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" opacity=".32"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9L12 2.6Z"/></svg></span>
+      </a>
+      <div class="rating">
+        <span class="rating__p" data-i18n="t.g">Google</span>
+        <span class="rating__n">5.0</span>
+        <span class="stars" aria-label="5 out of 5"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9L12 2.6Z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9L12 2.6Z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9L12 2.6Z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9L12 2.6Z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9L12 2.6Z"/></svg></span>
+      </div>
+      <div class="rating">
+        <span class="rating__p" data-i18n="t.fb">Facebook</span>
+        <span class="rating__n">5.0</span>
+        <span class="stars" aria-label="5 out of 5"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9L12 2.6Z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9L12 2.6Z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9L12 2.6Z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9L12 2.6Z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9L12 2.6Z"/></svg></span>
+      </div>
+    </div>
+
+    <div class="facts">
+      <div class="fact rv">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div><strong data-i18n="t.f1.t">No minimum order</strong><span data-i18n="t.f1.b">Order a single vial or fifty. There is no mandatory minimum.</span></div>
+      </div>
+      <div class="fact rv">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div><strong data-i18n="t.f2.t">Four ways to pay</strong><span data-i18n="t.f2.b">SINPE Móvil, Zelle, PayPal or cash on delivery.</span></div>
+      </div>
+      <div class="fact rv">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div><strong data-i18n="t.f3.t">Stock checked first</strong><span data-i18n="t.f3.b">We confirm availability before you pay anything.</span></div>
+      </div>
+      <div class="fact rv">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div><strong data-i18n="t.f4.t">15% bulk discount</strong><span data-i18n="t.f4.b">Five or more vials of the same product, applied automatically.</span></div>
+      </div>
+      <div class="fact rv">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div><strong data-i18n="t.f5.t">Not listed? Just ask</strong><span data-i18n="t.f5.b">Tell us the compound and we will check whether we can source it.</span></div>
+      </div>
+      <div class="fact rv">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div><strong data-i18n="t.f6.t">Delivered nationwide</strong><span data-i18n="t.f6.b">Delivery arranged anywhere in Costa Rica once payment is confirmed.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ FAQ ============================ -->
+<section class="sec" id="faq">
+  <div class="wrap">
+    <div class="sec-head center rv">
+      <p class="eyebrow" data-i18n="faq.eyebrow">Frequently asked</p>
+      <h2 data-i18n="faq.h2">Everything people ask before ordering</h2>
+    </div>
+
+    <div class="faq">
+      <div class="acc rv"><h3 style="margin:0"><button class="acc__btn" type="button" aria-expanded="false"><span data-i18n="faq.1.q">Do you ship outside Costa Rica?</span><span class="acc__ic" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg></span></button></h3><div class="acc__p"><div class="acc__in"><p data-i18n="faq.1.a">No. Peptides Costa Rica operates exclusively within Costa Rica. Serving one country is exactly what lets us keep stock local, avoid customs entirely and answer you the same day.</p></div></div></div>
+
+      <div class="acc rv"><h3 style="margin:0"><button class="acc__btn" type="button" aria-expanded="false"><span data-i18n="faq.2.q">What payment methods do you accept?</span><span class="acc__ic" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg></span></button></h3><div class="acc__p"><div class="acc__in"><p data-i18n="faq.2.a">SINPE Móvil, Zelle, PayPal and cash. Online checkout is available, and you can also simply confirm the order over WhatsApp and pay whichever way suits you.</p></div></div></div>
+
+      <div class="acc rv"><h3 style="margin:0"><button class="acc__btn" type="button" aria-expanded="false"><span data-i18n="faq.3.q">How do I confirm a product is in stock?</span><span class="acc__ic" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg></span></button></h3><div class="acc__p"><div class="acc__in"><p data-i18n="faq.3.a">Message us or send the request on this page and we will verify availability before you pay anything. You will never be charged for something we then have to backorder.</p></div></div></div>
+
+      <div class="acc rv"><h3 style="margin:0"><button class="acc__btn" type="button" aria-expanded="false"><span data-i18n="faq.4.q">Are Certificates of Analysis available?</span><span class="acc__ic" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg></span></button></h3><div class="acc__p"><div class="acc__in"><p data-i18n="faq.4.a">Yes. We offer Certificates of Analysis for our products. Ask for the COA covering what you are ordering and we will send it across — that offer stands whether or not you go on to buy.</p></div></div></div>
+
+      <div class="acc rv"><h3 style="margin:0"><button class="acc__btn" type="button" aria-expanded="false"><span data-i18n="faq.5.q">Is there a bulk discount?</span><span class="acc__ic" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg></span></button></h3><div class="acc__p"><div class="acc__in"><p data-i18n="faq.5.a">Purchase five or more vials of the same product and receive 15% off. Prices are listed per vial and the discount is applied at purchase. There is no mandatory minimum order.</p></div></div></div>
+
+      <div class="acc rv"><h3 style="margin:0"><button class="acc__btn" type="button" aria-expanded="false"><span data-i18n="faq.6.q">How is delivery handled?</span><span class="acc__ic" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg></span></button></h3><div class="acc__p"><div class="acc__in"><p data-i18n="faq.6.a">Delivery is arranged within Costa Rica once payment is confirmed. Timing depends on your location, and we will tell you what to expect for your area before you commit.</p></div></div></div>
+
+      <div class="acc rv"><h3 style="margin:0"><button class="acc__btn" type="button" aria-expanded="false"><span data-i18n="faq.7.q">Can I request a product that is not listed?</span><span class="acc__ic" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg></span></button></h3><div class="acc__p"><div class="acc__in"><p data-i18n="faq.7.a">Yes. Get in touch with the compound you are looking for and we will check whether we can source it and what the timeline would be.</p></div></div></div>
+
+      <div class="acc rv"><h3 style="margin:0"><button class="acc__btn" type="button" aria-expanded="false"><span data-i18n="faq.8.q">Do you provide medical advice?</span><span class="acc__ic" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg></span></button></h3><div class="acc__p"><div class="acc__in"><p data-i18n="faq.8.a">No. Peptides Costa Rica only shares general product information for educational purposes. Our products are supplied strictly for laboratory research use, are not approved or licensed by the FDA for the prevention, diagnosis, treatment or cure of any disease, and are not for human or veterinary use.</p></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ FINAL CTA ============================ -->
+<section class="sec" id="enquiry">
+  <div class="wrap">
+    <div class="strip rv">
+      <p class="eyebrow" style="justify-content:center" data-i18n="fin.eyebrow">Four questions, 45 seconds</p>
+      <h2 data-i18n="fin.h2">Find out what is in stock and what it costs</h2>
+      <p data-i18n="fin.sub">Tell us the category and how many vials. We come straight back with current availability, the price per vial, your bulk discount if it applies, and the COA if you want to see it first.</p>
+      <div class="strip__ctas">
+        <button class="btn btn--primary btn--lg btn--pulse" data-open data-cta="final" type="button">
+          <span data-i18n="cta.final">Check availability now</span>
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h13m0 0-5.5-5.5M18 12l-5.5 5.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <a class="btn btn--ghost btn--lg" href="#" data-wa data-cta="final-wa">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Z"/></svg>
+          <span data-i18n="cta.wa2">Or message us directly</span>
+        </a>
+      </div>
+      <p style="margin-top:16px;font-size:.8rem;color:rgba(255,255,255,.6)" data-i18n="fin.micro">No account &middot; No minimum order &middot; Research use only</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================ FOOTER ============================ -->
+<footer class="ftr">
+  <div class="wrap">
+    <div class="ftr__grid">
+      <div>
+        <a class="brand" href="#top">
+          <svg class="brand__mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+            <rect width="40" height="40" rx="11" fill="#0A3468"/>
+            <circle cx="14" cy="14" r="3.4" fill="#00C2D7"/><circle cx="26.5" cy="17" r="3.4" fill="#3D96EE"/><circle cx="19" cy="27" r="3.4" fill="#1573D6"/>
+            <path d="M14 14l12.5 3M26.5 17L19 27M19 27l-5-13" stroke="#3D96EE" stroke-width="1.5" opacity=".75"/>
+          </svg>
+          <span class="brand__name">Peptides<span> Costa Rica</span></span>
+        </a>
+        <p style="max-width:32ch" data-i18n="ftr.tag">Your local source for premium research peptides. Verified quality, transparent pricing, local reliability.</p>
+      </div>
+      <div>
+        <h4 data-i18n="ftr.c1">Explore</h4>
+        <ul>
+          <li><a href="#difference" data-i18n="nav.diff2">Why us</a></li>
+          <li><a href="#categories" data-i18n="nav.cats2">Categories</a></li>
+          <li><a href="#quality" data-i18n="nav.quality2">Quality</a></li>
+          <li><a href="#faq" data-i18n="nav.faq2">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-i18n="ftr.c2">Info</h4>
+        <ul>
+          <li><a href="https://peptidescostarica.net/about/" data-i18n="ftr.about">Our story</a></li>
+          <li><a href="https://peptidescostarica.net/" data-i18n="ftr.coa">COA database</a></li>
+          <li><a href="https://peptidescostarica.net/" data-i18n="ftr.bulk">Bulk discounts</a></li>
+          <li><a href="https://peptidescostarica.net/" data-i18n="ftr.shop">Shop all products</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-i18n="ftr.c3">Contact</h4>
+        <ul>
+          <li><a href="#" data-wa data-cta="footer-wa" data-i18n="ftr.wa">WhatsApp: +506 8404-6973</a></li>
+          <li><a href="tel:+50684046973" data-i18n="ftr.cr">Costa Rica: +506 8404-6973</a></li>
+          <li><a href="tel:+18314715559" data-i18n="ftr.us">US: +1 (831) 471-5559</a></li>
+          <li><a href="mailto:info@peptidescostarica.net">info@peptidescostarica.net</a></li>
+          <li><span data-i18n="ftr.addr">Curridabat, San José, 11801</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="legal">
+      <p data-i18n="ftr.l1"><strong>Research use only.</strong> Products offered by Peptides Costa Rica are intended strictly for laboratory research use only. They are not approved or licensed by the FDA for the prevention, diagnosis, treatment, or cure of any disease. Information on this website is for educational purposes only and should not be considered medical or legal advice. Not for human or veterinary use.</p>
+      <div class="ftr__btm">
+        <span data-i18n="ftr.copy">© 2026 Peptides Costa Rica. All rights reserved.</span>
+        <span data-i18n="ftr.lang">English &amp; Español</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================ STICKY + FAB ============================ -->
+<div class="sticky" id="sticky">
+  <button class="btn btn--primary btn--pulse" data-open data-cta="sticky" type="button" data-i18n="cta.sticky">Check availability</button>
+  <a class="btn btn--wa" href="#" data-wa data-cta="sticky-wa" aria-label="WhatsApp">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.09c-.24.68-1.42 1.3-1.96 1.35-.5.05-.98.23-3.32-.69-2.79-1.1-4.57-3.95-4.71-4.13-.14-.19-1.13-1.5-1.13-2.86 0-1.36.71-2.03.96-2.31.25-.28.55-.35.73-.35.18 0 .37 0 .53.01.17.01.4-.06.62.48.24.57.8 1.97.87 2.11.07.14.12.31.02.5-.09.19-.14.31-.28.47-.14.16-.29.36-.42.48-.14.14-.28.29-.12.57.16.28.72 1.18 1.54 1.91 1.06.94 1.95 1.24 2.23 1.38.28.14.44.12.6-.07.17-.19.7-.81.88-1.09.19-.28.37-.23.63-.14.25.09 1.65.78 1.93.92.28.14.47.21.54.33.07.11.07.65-.17 1.33Z"/></svg>
+  </a>
+</div>
+
+<div class="fab">
+  <a class="fab__b fab__b--wa" href="#" data-wa data-cta="fab-wa" aria-label="WhatsApp us">
+    <span class="fab__lbl" data-i18n="fab.wa">Message us on WhatsApp</span>
+    <svg width="27" height="27" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.09c-.24.68-1.42 1.3-1.96 1.35-.5.05-.98.23-3.32-.69-2.79-1.1-4.57-3.95-4.71-4.13-.14-.19-1.13-1.5-1.13-2.86 0-1.36.71-2.03.96-2.31.25-.28.55-.35.73-.35.18 0 .37 0 .53.01.17.01.4-.06.62.48.24.57.8 1.97.87 2.11.07.14.12.31.02.5-.09.19-.14.31-.28.47-.14.16-.29.36-.42.48-.14.14-.28.29-.12.57.16.28.72 1.18 1.54 1.91 1.06.94 1.95 1.24 2.23 1.38.28.14.44.12.6-.07.17-.19.7-.81.88-1.09.19-.28.37-.23.63-.14.25.09 1.65.78 1.93.92.28.14.47.21.54.33.07.11.07.65-.17 1.33Z"/></svg>
+  </a>
+  <button class="fab__b fab__b--q" data-open data-cta="fab-quote" type="button" aria-label="Check availability">
+    <span class="fab__lbl" data-i18n="fab.q">Check availability — 45 seconds</span>
+    <svg width="25" height="25" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6.5h16M4 12h16M4 17.5h9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+  </button>
+</div>
+
+<!-- ============================ MODAL ============================ -->
+<div class="ov" id="ov" role="dialog" aria-modal="true" aria-labelledby="modTitle">
+  <div class="ov__bd" data-close></div>
+  <div class="mod" id="mod">
+    <button class="mod__x" id="modX" aria-label="Close">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+    </button>
+
+    <div class="mod__top">
+      <span class="mod__kick"><span class="dot-live"></span><span data-i18n="mod.kick">Free · No account needed</span></span>
+      <h2 class="mod__t" id="modTitle" data-i18n="mod.title">Check availability &amp; pricing</h2>
+      <p class="mod__s" id="modSub" data-i18n="mod.sub">Four quick questions, then your details. Around 45 seconds.</p>
+    </div>
+
+    <div class="mod__meta">
+      <button type="button" class="mod__back" id="mBack" hidden>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M19 12H6m0 0 5.5-5.5M6 12l5.5 5.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span data-i18n="mod.back">Back</span>
+      </button>
+      <span class="mod__step" id="mStep">Step 1 of 5</span>
+      <span class="mod__left" id="mLeft">~40s left</span>
+    </div>
+
+    <div class="pbar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="20" aria-label="Progress"><div class="pbar__f" id="mBar"></div></div>
+    <div class="dots" id="mDots" aria-hidden="true"><i class="done"></i><i></i><i></i><i></i><i></i></div>
+    <div class="chips" id="mChips"></div>
+
+    <div aria-live="polite">
+      <div class="pane on" data-step="1">
+        <h3 class="mq" data-i18n="s1.q">Which category are you looking at?</h3>
+        <p class="mh" data-i18n="s1.h">This tells us which part of the catalogue to check.</p>
+        <div class="opts">
+          <button type="button" class="opt" data-q="category" data-val="Weight Loss"><span class="opt__d"></span><span class="opt__t" data-i18n="s1.o1">Weight Loss</span></button>
+          <button type="button" class="opt" data-q="category" data-val="Muscle Growth"><span class="opt__d"></span><span class="opt__t" data-i18n="s1.o2">Muscle Growth</span></button>
+          <button type="button" class="opt" data-q="category" data-val="Healing & Recovery"><span class="opt__d"></span><span class="opt__t" data-i18n="s1.o3">Healing &amp; Recovery</span></button>
+          <button type="button" class="opt" data-q="category" data-val="Anti-Aging & Longevity"><span class="opt__d"></span><span class="opt__t" data-i18n="s1.o4">Anti-Aging &amp; Longevity</span></button>
+          <button type="button" class="opt" data-q="category" data-val="Cognitive, Skin, Sleep or other"><span class="opt__d"></span><span class="opt__t" data-i18n="s1.o5">Cognitive, Skin, Sleep or other</span></button>
+        </div>
+      </div>
+
+      <div class="pane" data-step="2">
+        <h3 class="mq" data-i18n="s2.q">Do you know which product you need?</h3>
+        <p class="mh" data-i18n="s2.h">Either way is fine — it just tells us how to reply.</p>
+        <div class="opts">
+          <button type="button" class="opt" data-q="clarity" data-val="Specific product in mind"><span class="opt__d"></span><span class="opt__t" data-i18n="s2.o1">Yes, I know exactly what I want</span></button>
+          <button type="button" class="opt" data-q="clarity" data-val="Shortlist of options"><span class="opt__d"></span><span class="opt__t" data-i18n="s2.o2">I have a shortlist<span class="opt__s" data-i18n="s2.o2s">Send me availability on a few</span></span></button>
+          <button type="button" class="opt" data-q="clarity" data-val="Needs guidance"><span class="opt__d"></span><span class="opt__t" data-i18n="s2.o3">Not sure yet — point me in a direction</span></button>
+          <button type="button" class="opt" data-q="clarity" data-val="Comparing prices"><span class="opt__d"></span><span class="opt__t" data-i18n="s2.o4">Mainly comparing prices</span></button>
+        </div>
+      </div>
+
+      <div class="pane" data-step="3">
+        <h3 class="mq" data-i18n="s3.q">How many vials, roughly?</h3>
+        <p class="mh" data-i18n="s3.h">An estimate is fine. It decides whether the bulk discount applies.</p>
+        <div class="opts">
+          <button type="button" class="opt" data-q="volume" data-val="1–4 vials"><span class="opt__d"></span><span class="opt__t" data-i18n="s3.o1">1–4 vials</span></button>
+          <button type="button" class="opt" data-q="volume" data-val="5–9 vials"><span class="opt__d"></span><span class="opt__t" data-i18n="s3.o2">5–9 vials<span class="opt__s" data-i18n="s3.o2s">15% off the same product</span></span></button>
+          <button type="button" class="opt" data-q="volume" data-val="10+ vials"><span class="opt__d"></span><span class="opt__t" data-i18n="s3.o3">10 or more vials<span class="opt__s" data-i18n="s3.o3s">15% off, plus talk to us about repeat orders</span></span></button>
+          <button type="button" class="opt" data-q="volume" data-val="Not sure yet"><span class="opt__d"></span><span class="opt__t" data-i18n="s3.o4">Not sure yet</span></button>
+        </div>
+      </div>
+
+      <div class="pane" data-step="4">
+        <h3 class="mq" data-i18n="s4.q">How should we get back to you?</h3>
+        <p class="mh" data-i18n="s4.h">We will use this channel and no other.</p>
+        <div class="opts">
+          <button type="button" class="opt" data-q="channel" data-val="WhatsApp"><span class="opt__d"></span><span class="opt__t" data-i18n="s4.o1">WhatsApp<span class="opt__s" data-i18n="s4.o1s">Fastest — we reply quickly during business hours</span></span></button>
+          <button type="button" class="opt" data-q="channel" data-val="Email"><span class="opt__d"></span><span class="opt__t" data-i18n="s4.o2">Email<span class="opt__s" data-i18n="s4.o2s">Full availability list and COA attached</span></span></button>
+          <button type="button" class="opt" data-q="channel" data-val="Phone"><span class="opt__d"></span><span class="opt__t" data-i18n="s4.o3">Phone call</span></button>
+        </div>
+      </div>
+
+      <div class="pane" data-step="5">
+        <h3 class="mq" id="s5t" data-i18n="s5.q">Where should we send it?</h3>
+        <p class="mh" data-i18n="s5.h">Last step — then we go and check stock for you.</p>
+        <form id="qForm" novalidate>
+          <div class="fld">
+            <label for="fname" data-i18n="f.name">Name</label>
+            <input type="text" id="fname" autocomplete="name" data-i18n-ph="f.name.ph" placeholder="Your name">
+            <p class="err" id="err-fname" data-i18n="f.name.err">Please enter your name.</p>
+          </div>
+          <div class="fld">
+            <label for="email" data-i18n="f.email">Email</label>
+            <input type="email" id="email" autocomplete="email" inputmode="email" data-i18n-ph="f.email.ph" placeholder="you@email.com">
+            <p class="err" id="err-email" data-i18n="f.email.err">Please enter a valid email address.</p>
+          </div>
+          <div class="fld">
+            <label for="phone" data-i18n="f.phone">Phone / WhatsApp</label>
+            <input type="tel" id="phone" autocomplete="tel" inputmode="tel" data-i18n-ph="f.phone.ph" placeholder="+506 0000 0000">
+            <p class="err" id="err-phone" data-i18n="f.phone.err">Please enter a valid phone number.</p>
+          </div>
+
+          <input class="hp" type="text" id="company" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+          <label class="chk" for="consent">
+            <input type="checkbox" id="consent">
+            <span data-i18n="f.consent">I agree to be contacted about this enquiry and accept the <a href="#terms">Terms of Sale</a>, including that all products are supplied for laboratory research use only.</span>
+          </label>
+          <p class="err" id="err-consent" data-i18n="f.consent.err">Please tick the box so we can reply to you.</p>
+
+          <button type="submit" class="btn btn--primary btn--block btn--lg" id="qSubmit" style="margin-top:14px" data-i18n="cta.submit">Send my request</button>
+
+          <p class="mfoot">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4.5" y="10" width="15" height="10" rx="3" stroke="currentColor" stroke-width="1.9"/><path d="M8 10V7.5a4 4 0 0 1 8 0V10" stroke="currentColor" stroke-width="1.9"/></svg>
+            <span data-i18n="f.secure">Confidential — we never sell or share your details</span>
+          </p>
+        </form>
+      </div>
+
+      <div class="pane" data-step="6">
+        <div class="done">
+          <div class="done__r"><svg width="33" height="33" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3 data-i18n="done.h">Got it — we are checking stock now.</h3>
+          <p data-i18n="done.p">Here is what you told us. Continue on WhatsApp and we will pick up from exactly this point.</p>
+          <div class="recap"><dl id="recap"></dl></div>
+          <a class="btn btn--wa btn--block btn--lg" id="waFinish" href="#">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Z"/></svg>
+            <span data-i18n="cta.continue">Continue on WhatsApp</span>
+          </a>
+          <p class="mfoot" style="margin-top:12px"><span id="redir" data-i18n="done.redir">Opening WhatsApp automatically…</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+"use strict";
+
+/* ============================================================
+   CONFIG
+   ============================================================ */
+var CONFIG = {
+  whatsapp: "50684046973",
+  email: "info@peptidescostarica.net",
+  crmEndpoint: null,            // set to your webhook URL to capture leads
+  redirectDelayMs: 3500,
+  scrollTriggerPct: 0.55,
+  autoOpenEnabled: true
+};
+
+var $  = function(s,c){return (c||document).querySelector(s);};
+var $$ = function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s));};
+
+/* ============================================================
+   i18n — English in the markup, Spanish here
+   ============================================================ */
+var ES = {
+"skip":"Ir a la solicitud de disponibilidad",
+"nav.diff":"Por qué nosotros","nav.cats":"Categorías","nav.quality":"Calidad","nav.trust":"Reseñas","nav.faq":"Preguntas",
+"nav.diff2":"Por qué nosotros","nav.cats2":"Categorías","nav.quality2":"Calidad","nav.faq2":"Preguntas",
+"cta.header":"Ver disponibilidad","cta.primary":"Ver disponibilidad y precios","cta.wa":"Escríbenos por WhatsApp",
+"cta.diff":"Pregunta qué hay en stock hoy","cta.cats":"Dinos tu categoría","cta.final":"Consultar disponibilidad",
+"cta.wa2":"O escríbenos directamente","cta.sticky":"Ver disponibilidad","cta.submit":"Enviar mi solicitud","cta.continue":"Continuar por WhatsApp",
+"hero.flag.b":"En stock","hero.flag.t":"En Costa Rica — sin aduanas ni esperas de importación",
+"hero.h1a":"Péptidos de investigación premium,","hero.h1b":"ya dentro del país.",
+"hero.sub":"Somos tu fuente local en Costa Rica. Como el inventario está aquí, no hay demoras transfronterizas ni cargos de importación ocultos: solo disponibilidad verificada, precios transparentes y línea directa con una persona real. Los Certificados de Análisis están disponibles a solicitud.",
+"hero.micro":"Sin pedido mínimo · Disponibilidad confirmada antes de pagar · 15% de descuento en 5+ viales",
+"hero.p1":"Pureza probada en laboratorio","hero.p2":"COA disponibles","hero.p3":"English y Español",
+"float.a.t":"Probado en pureza","float.a.s":"COA disponible a solicitud",
+"float.b.t":"Entrega en Costa Rica","float.b.s":"Nada cruza una frontera",
+"band.1":"Péptidos en el catálogo","band.2":"Descuento en 5+ viales del mismo producto","band.3":"Cargos de importación o aduana","band.4":"Formas de pago, incluido efectivo",
+"d.eyebrow":"Hacemos las cosas diferente",
+"d.h2":"Importar por tu cuenta te cuesta semanas. Comprar aquí te cuesta un mensaje.",
+"d.sub":"Operamos exclusivamente dentro de Costa Rica. Esa única decisión elimina casi todo lo que sale mal al conseguir péptidos.",
+"d.bad.t":"Importarlo tú mismo",
+"d.bad.1":"Semanas en tránsito y después el tiempo que decida tomarse la aduana.",
+"d.bad.2":"Aranceles y cargos de gestión que aparecen cuando ya has pagado.",
+"d.bad.3":"Sin forma de confirmar que un producto está realmente en stock antes de pagarlo.",
+"d.bad.4":"Soporte en otra zona horaria y en otro idioma, si es que contesta.",
+"d.good.t":"Comprar de inventario local",
+"d.good.1":"Sin demoras transfronterizas. El inventario ya está dentro del país.",
+"d.good.2":"Sin cargos de importación ocultos. El precio que te cotizamos es el que pagas.",
+"d.good.3":"Disponibilidad verificada antes de pagar, siempre, para que nada sea una apuesta.",
+"d.good.4":"Comunicación directa con una persona real, en inglés o español.",
+"c.eyebrow":"Comprar por categoría",
+"c.h2":"Más de cuarenta péptidos, agrupados por aplicación de investigación",
+"c.sub":"Dinos en qué categoría trabajas y te respondemos con lo que hay disponible ahora, el precio por vial y el Certificado de Análisis si quieres verlo primero.",
+"c.1.t":"Pérdida de peso","c.1.b":"Compuestos estudiados en investigación del metabolismo de grasas y del apetito.",
+"c.2.t":"Crecimiento muscular","c.2.b":"Investigación en síntesis proteica y señalización del crecimiento.",
+"c.3.t":"Sanación y recuperación","c.3.b":"Modelos de cicatrización, tendón, ligamento y tejido blando.",
+"c.4.t":"Antienvejecimiento","c.4.b":"Investigación en senescencia, telómeros y longevidad celular.",
+"c.5.t":"Cognitivo","c.5.b":"Investigación en memoria, neuroprotección y respuesta al estrés.",
+"c.6.t":"Energía","c.6.b":"Investigación en función mitocondrial y energía celular.",
+"c.7.t":"Cardiovascular","c.7.b":"Aplicaciones de investigación circulatoria y cardíaca.",
+"c.8.t":"Piel y colágeno","c.8.b":"Investigación en síntesis de colágeno, pigmentación y barrera cutánea.",
+"c.ruo":"<strong>Solo para investigación.</strong> Los nombres de categoría describen los campos en los que se estudian estos compuestos. No son afirmaciones sobre ningún efecto en humanos. Todos los productos se suministran estrictamente para investigación de laboratorio y no son para uso humano ni veterinario.",
+"q.eyebrow":"Pureza probada en laboratorio",
+"q.h2":"No deberías tener que fiarte de la palabra de un proveedor",
+"q.sub":"Nuestros péptidos provienen de laboratorios certificados, se fabrican bajo estrictos estándares de control de calidad y se prueban en pureza y consistencia. Esto es lo que significa en la práctica y lo que puedes pedir ver.",
+"q.1.t":"Laboratorios certificados","q.1.b":"Cada producto proviene de instalaciones de fabricación certificadas que operan bajo estándares documentados de control de calidad.",
+"q.2.t":"Probado en pureza","q.2.b":"El material se prueba en pureza y consistencia para que lo que dice la etiqueta coincida con lo que hay en el vial, lote tras lote.",
+"q.3.t":"Certificados de Análisis","q.3.b":"Ofrecemos Certificados de Análisis de nuestros productos. Pide el que cubre tu pedido y te lo enviamos, compres o no.",
+"q.4.t":"Manejo controlado","q.4.b":"El inventario se guarda y manipula en condiciones controladas aquí en Costa Rica, sin pasar antes por tres bodegas desconocidas.",
+"q.ruo":"Las pruebas cubren la identidad y la pureza del material suministrado. No son una evaluación de seguridad, ni una afirmación de eficacia, ni una aprobación de ningún tipo, y no habilitan ningún compuesto para uso en personas ni animales.",
+"t.eyebrow":"Tu proveedor de confianza",
+"t.h2":"Valorado por los clientes que compran aquí",
+"t.sub":"Nos enorgullece la confianza y la lealtad de nuestros clientes en toda Costa Rica. Nuestras valoraciones son públicas: compruébalas tú mismo antes de pedir nada.",
+"t.tp":"Trustpilot","t.g":"Google","t.fb":"Facebook",
+"t.f1.t":"Sin pedido mínimo","t.f1.b":"Pide un solo vial o cincuenta. No hay mínimo obligatorio.",
+"t.f2.t":"Cuatro formas de pago","t.f2.b":"SINPE Móvil, Zelle, PayPal o efectivo contra entrega.",
+"t.f3.t":"Stock verificado primero","t.f3.b":"Confirmamos disponibilidad antes de que pagues nada.",
+"t.f4.t":"15% de descuento por volumen","t.f4.b":"Cinco o más viales del mismo producto, aplicado automáticamente.",
+"t.f5.t":"¿No está en la lista? Pregunta","t.f5.b":"Dinos el compuesto y revisamos si podemos conseguirlo.",
+"t.f6.t":"Entrega en todo el país","t.f6.b":"Entrega coordinada en cualquier punto de Costa Rica una vez confirmado el pago.",
+"faq.eyebrow":"Preguntas frecuentes","faq.h2":"Todo lo que se pregunta antes de pedir",
+"faq.1.q":"¿Envían fuera de Costa Rica?",
+"faq.1.a":"No. Peptides Costa Rica opera exclusivamente dentro de Costa Rica. Servir a un solo país es justamente lo que nos permite mantener inventario local, evitar por completo la aduana y responderte el mismo día.",
+"faq.2.q":"¿Qué métodos de pago aceptan?",
+"faq.2.a":"SINPE Móvil, Zelle, PayPal y efectivo. Hay pago en línea disponible, y también puedes confirmar el pedido por WhatsApp y pagar como mejor te convenga.",
+"faq.3.q":"¿Cómo confirmo que un producto está en stock?",
+"faq.3.a":"Escríbenos o envía la solicitud de esta página y verificamos la disponibilidad antes de que pagues nada. Nunca se te cobrará por algo que luego tengamos que dejar pendiente.",
+"faq.4.q":"¿Hay Certificados de Análisis disponibles?",
+"faq.4.a":"Sí. Ofrecemos Certificados de Análisis de nuestros productos. Pide el COA que cubre tu pedido y te lo enviamos — esa oferta se mantiene compres o no.",
+"faq.5.q":"¿Hay descuento por volumen?",
+"faq.5.a":"Compra cinco o más viales del mismo producto y recibe un 15% de descuento. Los precios se indican por vial y el descuento se aplica en la compra. No hay pedido mínimo obligatorio.",
+"faq.6.q":"¿Cómo funciona la entrega?",
+"faq.6.a":"La entrega se coordina dentro de Costa Rica una vez confirmado el pago. El tiempo depende de tu ubicación, y te diremos qué esperar en tu zona antes de que te comprometas.",
+"faq.7.q":"¿Puedo pedir un producto que no está listado?",
+"faq.7.a":"Sí. Escríbenos con el compuesto que buscas y revisamos si podemos conseguirlo y en qué plazo.",
+"faq.8.q":"¿Dan asesoramiento médico?",
+"faq.8.a":"No. Peptides Costa Rica solo comparte información general de producto con fines educativos. Nuestros productos se suministran estrictamente para uso en investigación de laboratorio, no están aprobados ni autorizados por la FDA para la prevención, diagnóstico, tratamiento o cura de ninguna enfermedad, y no son para uso humano ni veterinario.",
+"fin.eyebrow":"Cuatro preguntas, 45 segundos",
+"fin.h2":"Averigua qué hay en stock y cuánto cuesta",
+"fin.sub":"Dinos la categoría y cuántos viales. Te respondemos con la disponibilidad actual, el precio por vial, tu descuento por volumen si aplica y el COA si quieres verlo primero.",
+"fin.micro":"Sin cuenta · Sin pedido mínimo · Solo para investigación",
+"fab.wa":"Escríbenos por WhatsApp","fab.q":"Ver disponibilidad — 45 segundos",
+"mod.kick":"Gratis · Sin cuenta","mod.title":"Disponibilidad y precios","mod.sub":"Cuatro preguntas rápidas y tus datos. Unos 45 segundos.","mod.back":"Atrás",
+"s1.q":"¿Qué categoría te interesa?","s1.h":"Esto nos dice qué parte del catálogo revisar.",
+"s1.o1":"Pérdida de peso","s1.o2":"Crecimiento muscular","s1.o3":"Sanación y recuperación","s1.o4":"Antienvejecimiento y longevidad","s1.o5":"Cognitivo, piel, sueño u otro",
+"s2.q":"¿Sabes qué producto necesitas?","s2.h":"Cualquiera de las dos está bien: solo nos dice cómo responderte.",
+"s2.o1":"Sí, sé exactamente qué quiero","s2.o2":"Tengo una lista corta","s2.o2s":"Envíame disponibilidad de varios",
+"s2.o3":"Aún no — oriéntame","s2.o4":"Sobre todo estoy comparando precios",
+"s3.q":"¿Cuántos viales, aproximadamente?","s3.h":"Una estimación basta. Decide si aplica el descuento por volumen.",
+"s3.o1":"1–4 viales","s3.o2":"5–9 viales","s3.o2s":"15% de descuento en el mismo producto",
+"s3.o3":"10 viales o más","s3.o3s":"15% de descuento y hablamos de pedidos recurrentes","s3.o4":"Aún no lo sé",
+"s4.q":"¿Cómo te respondemos?","s4.h":"Usaremos este canal y ningún otro.",
+"s4.o1":"WhatsApp","s4.o1s":"Lo más rápido — respondemos pronto en horario laboral",
+"s4.o2":"Correo electrónico","s4.o2s":"Lista completa de disponibilidad y COA adjunto",
+"s4.o3":"Llamada telefónica",
+"s5.q":"¿A dónde te lo enviamos?","s5.h":"Último paso y vamos a revisar el stock para ti.",
+"f.name":"Nombre","f.name.ph":"Tu nombre","f.name.err":"Por favor, escribe tu nombre.",
+"f.email":"Correo electrónico","f.email.ph":"tu@correo.com","f.email.err":"Introduce un correo electrónico válido.",
+"f.phone":"Teléfono / WhatsApp","f.phone.ph":"+506 0000 0000","f.phone.err":"Introduce un número de teléfono válido.",
+"f.consent":"Acepto que me contacten sobre esta consulta y acepto los <a href=\"#terms\">Términos de Venta</a>, incluido que todos los productos se suministran únicamente para investigación de laboratorio.",
+"f.consent.err":"Marca la casilla para que podamos responderte.",
+"f.secure":"Confidencial — nunca vendemos ni compartimos tus datos",
+"done.h":"Listo — ya estamos revisando el stock.","done.p":"Esto es lo que nos indicaste. Continúa por WhatsApp y retomamos justo desde aquí.",
+"done.redir":"Abriendo WhatsApp automáticamente…",
+"ftr.tag":"Tu fuente local de péptidos de investigación premium. Calidad verificada, precios transparentes, fiabilidad local.",
+"ftr.c1":"Explorar","ftr.c2":"Información","ftr.c3":"Contacto",
+"ftr.about":"Nuestra historia","ftr.coa":"Base de datos de COA","ftr.bulk":"Descuentos por volumen","ftr.shop":"Ver todos los productos",
+"ftr.wa":"WhatsApp: +506 8404-6973","ftr.cr":"Costa Rica: +506 8404-6973","ftr.us":"EE. UU.: +1 (831) 471-5559","ftr.addr":"Curridabat, San José, 11801",
+"ftr.l1":"<strong>Solo para investigación.</strong> Los productos ofrecidos por Peptides Costa Rica están destinados estrictamente a uso en investigación de laboratorio. No están aprobados ni autorizados por la FDA para la prevención, diagnóstico, tratamiento o cura de ninguna enfermedad. La información de este sitio es solo con fines educativos y no debe considerarse asesoramiento médico ni legal. No apto para uso humano ni veterinario.",
+"ftr.copy":"© 2026 Peptides Costa Rica. Todos los derechos reservados.","ftr.lang":"English y Español"
+};
+
+var UI = {
+  en:{step:function(a,b){return "Step "+a+" of "+b;},left:function(s){return "~"+s+"s left";},done:"Done",
+      sending:"Sending…",back:"Welcome back — picking up where you left off.",
+      recap:{category:"Category",clarity:"Looking for",volume:"Volume",channel:"Reply via"}},
+  es:{step:function(a,b){return "Paso "+a+" de "+b;},left:function(s){return "~"+s+"s restantes";},done:"Listo",
+      sending:"Enviando…",back:"Bienvenido de nuevo — retomamos donde lo dejaste.",
+      recap:{category:"Categoría",clarity:"Busca",volume:"Volumen",channel:"Respuesta por"}}
+};
+
+var lang = "en";
+
+function snapshot(){
+  $$("[data-i18n]").forEach(function(el){el.setAttribute("data-en-html", el.innerHTML);});
+  $$("[data-i18n-ph]").forEach(function(el){el.setAttribute("data-en-ph", el.getAttribute("placeholder")||"");});
+}
+function setLang(next){
+  lang = next;
+  document.documentElement.lang = next;
+  $$("[data-i18n]").forEach(function(el){
+    var k = el.getAttribute("data-i18n");
+    var v = (next==="es") ? ES[k] : el.getAttribute("data-en-html");
+    if (v != null) el.innerHTML = v;
+  });
+  $$("[data-i18n-ph]").forEach(function(el){
+    var k = el.getAttribute("data-i18n-ph");
+    var v = (next==="es") ? ES[k] : el.getAttribute("data-en-ph");
+    if (v != null) el.setAttribute("placeholder", v);
+  });
+  $$(".lang button").forEach(function(b){b.setAttribute("aria-pressed", String(b.getAttribute("data-lang")===next));});
+  updateMeta(); renderChips(); refreshWa();
+  track("language_switch",{language:next});
+}
+
+function waHref(msg){return "https://wa.me/"+CONFIG.whatsapp+"?text="+encodeURIComponent(msg);}
+function defaultMsg(){
+  return lang==="es"
+    ? "Hola 👋 Quisiera consultar disponibilidad y precios."
+    : "Hi 👋 I'd like to check availability and pricing.";
+}
+function refreshWa(){$$("[data-wa]").forEach(function(a){a.setAttribute("href", waHref(defaultMsg()));});}
+
+function track(ev,payload){
+  var d = payload||{}; d.event = ev;
+  if (window.dataLayer && window.dataLayer.push) window.dataLayer.push(d);
+  if (window.console && console.debug) console.debug("[track]", ev, d);
+}
+
+/* ---------- header / sticky / auto-open ---------- */
+var hdr = $("#hdr"), sticky = $("#sticky"), autoFired = false;
+function onScroll(){
+  var y = window.pageYOffset || document.documentElement.scrollTop;
+  hdr.classList.toggle("stuck", y > 8);
+  if (sticky) sticky.classList.toggle("on", y > 500);
+  if (CONFIG.autoOpenEnabled && !autoFired && !started && !ov.classList.contains("open")){
+    var max = document.body.scrollHeight - window.innerHeight;
+    if (max > 0 && (y/max) >= CONFIG.scrollTriggerPct){ autoFired = true; openM("scroll-depth"); }
+  }
+}
+window.addEventListener("scroll", onScroll, {passive:true});
+
+if ("IntersectionObserver" in window){
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){e.target.classList.add("in"); io.unobserve(e.target);} });
+  },{rootMargin:"0px 0px -8% 0px",threshold:.08});
+  $$(".rv").forEach(function(el,i){el.style.transitionDelay=(Math.min(i%3,2)*70)+"ms"; io.observe(el);});
+
+  var co = new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(!e.isIntersecting) return;
+      co.unobserve(e.target);
+      var el=e.target, target=parseInt(el.getAttribute("data-count"),10);
+      var pre=el.getAttribute("data-prefix")||"", suf=el.getAttribute("data-suffix")||"";
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      var t0=null;
+      function tick(ts){
+        if(!t0) t0=ts;
+        var p=Math.min((ts-t0)/1100,1);
+        el.textContent = pre + Math.round(target*(1-Math.pow(1-p,3))) + suf;
+        if(p<1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    });
+  },{threshold:.5});
+  $$("[data-count]").forEach(function(el){co.observe(el);});
+} else { $$(".rv").forEach(function(el){el.classList.add("in");}); }
+
+/* ---------- FAQ ---------- */
+$$(".acc__btn").forEach(function(btn){
+  var panel = btn.parentNode.nextElementSibling;
+  btn.addEventListener("click", function(){
+    var open = btn.getAttribute("aria-expanded")==="true";
+    $$(".acc__btn").forEach(function(o){
+      if(o!==btn && o.getAttribute("aria-expanded")==="true"){
+        o.setAttribute("aria-expanded","false");
+        o.parentNode.nextElementSibling.style.height="0px";
+      }
+    });
+    btn.setAttribute("aria-expanded", String(!open));
+    panel.style.height = open ? "0px" : panel.firstElementChild.offsetHeight+"px";
+    if(!open) track("faq_open",{q:btn.textContent.trim().slice(0,60)});
+  });
+});
+
+/* ---------- modal ---------- */
+var ov=$("#ov"), mod=$("#mod");
+var TOTAL=5, current=1, started=false, completed=false, everOpened=false, lastFocus=null;
+var answers={category:"",clarity:"",volume:"",channel:""};
+
+function pane(n){return $('.pane[data-step="'+n+'"]');}
+
+function updateMeta(){
+  var shown=Math.min(current,TOTAL), pct=(shown/TOTAL)*100;
+  $("#mBar").style.width=pct+"%";
+  $("#mBar").parentNode.setAttribute("aria-valuenow",String(Math.round(pct)));
+  $("#mStep").textContent = (current>TOTAL)?UI[lang].done:UI[lang].step(shown,TOTAL);
+  $("#mLeft").textContent = (current>TOTAL)?"":UI[lang].left(Math.max(0,(TOTAL-shown+1)*8));
+  $("#mBack").hidden = (current===1||current>TOTAL);
+  $$("#mDots i").forEach(function(d,i){d.classList.toggle("done", i<shown);});
+}
+function renderChips(){
+  var box=$("#mChips"); box.innerHTML="";
+  ["category","clarity","volume","channel"].forEach(function(k){
+    if(!answers[k]) return;
+    var s=document.createElement("span"); s.className="chip"; s.textContent=answers[k]; box.appendChild(s);
+  });
+}
+function goTo(n,focus){
+  pane(current).classList.remove("on");
+  current=n;
+  pane(current).classList.add("on");
+  updateMeta(); renderChips();
+  if(focus!==false){
+    var f=pane(current).querySelector("button, input");
+    if(f && window.innerWidth>900){try{f.focus({preventScroll:true});}catch(e){}}
+  }
+  mod.scrollTop=0;
+  track("enquiry_step",{step:n});
+}
+function openM(src){
+  if(ov.classList.contains("open")) return;
+  lastFocus=document.activeElement;
+  ov.classList.add("open");
+  document.body.classList.add("is-locked");
+  if(everOpened && started && !completed) $("#modSub").textContent=UI[lang].back;
+  everOpened=true;
+  setTimeout(function(){
+    var f=pane(current).querySelector("button, input")||$("#modX");
+    if(f){try{f.focus({preventScroll:true});}catch(e){}}
+  },60);
+  track("enquiry_open",{source:src||"unknown",language:lang});
+}
+function closeM(){
+  if(!ov.classList.contains("open")) return;
+  ov.classList.remove("open");
+  document.body.classList.remove("is-locked");
+  if(lastFocus&&lastFocus.focus){try{lastFocus.focus({preventScroll:true});}catch(e){}}
+  track("enquiry_close",{step:current,started:started,completed:completed});
+}
+$$("[data-open]").forEach(function(b){
+  b.addEventListener("click", function(){
+    track("cta_click",{location:b.getAttribute("data-cta")||"unknown",language:lang});
+    openM(b.getAttribute("data-cta"));
+  });
+});
+$$("[data-close]").forEach(function(b){b.addEventListener("click", closeM);});
+$("#modX").addEventListener("click", closeM);
+document.addEventListener("keydown", function(e){
+  if(e.key==="Escape" && ov.classList.contains("open")) closeM();
+  if(e.key==="Tab" && ov.classList.contains("open")) trap(e);
+});
+function trap(e){
+  var f=$$('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])', mod)
+    .filter(function(el){return el.offsetParent!==null && !el.disabled;});
+  if(!f.length) return;
+  var first=f[0], last=f[f.length-1];
+  if(e.shiftKey && document.activeElement===first){e.preventDefault(); last.focus();}
+  else if(!e.shiftKey && document.activeElement===last){e.preventDefault(); first.focus();}
+}
+
+$$(".opt").forEach(function(btn){
+  btn.addEventListener("click", function(){
+    var q=btn.getAttribute("data-q");
+    answers[q]=btn.getAttribute("data-val");
+    $$(".opt",btn.parentNode).forEach(function(o){o.classList.remove("sel");});
+    btn.classList.add("sel");
+    if(!started){started=true; track("enquiry_start",{});}
+    track("enquiry_answer",{question:q,answer:answers[q]});
+    setTimeout(function(){goTo(Math.min(current+1,TOTAL));},200);
+  });
+});
+$("#mBack").addEventListener("click", function(){ if(current>1) goTo(current-1); });
+
+function showErr(id,on){
+  var e=$("#err-"+id); if(e) e.classList.toggle("show",on);
+  var i=$("#"+id); if(i && i.type!=="checkbox") i.setAttribute("aria-invalid", on?"true":"false");
+}
+function validEmail(v){return /^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i.test(v);}
+function validPhone(v){return v.replace(/\D/g,"").length>=7;}
+
+$("#qForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  if($("#company").value!=="") return;
+  var name=$("#fname").value.trim(), email=$("#email").value.trim(), phone=$("#phone").value.trim();
+  var consent=$("#consent").checked;
+  var okN=name.length>=2, okE=validEmail(email), okP=validPhone(phone);
+  showErr("fname",!okN); showErr("email",!okE); showErr("phone",!okP); showErr("consent",!consent);
+  if(!(okN&&okE&&okP&&consent)){
+    var bad=$("#qForm").querySelector('[aria-invalid="true"]')||$("#consent");
+    if(bad) bad.focus();
+    track("enquiry_validation_error",{});
+    return;
+  }
+  var lead={
+    name:name,email:email,phone:phone,
+    category:answers.category,lookingFor:answers.clarity,
+    volume:answers.volume,preferredChannel:answers.channel,
+    consent:true,language:lang,pageUrl:location.href,referrer:document.referrer
+  };
+  var b=$("#qSubmit"); b.disabled=true; b.textContent=UI[lang].sending;
+  submitToCRM(lead).then(function(){
+    completed=true;
+    track("generate_lead",{channel:answers.channel,language:lang,category:answers.category,volume:answers.volume,value:1});
+    success(lead);
+  });
+});
+
+function submitToCRM(lead){
+  if(!CONFIG.crmEndpoint){ console.info("[CRM stub] lead:", lead); return Promise.resolve(); }
+  return fetch(CONFIG.crmEndpoint,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(lead)})
+    .catch(function(err){console.warn("CRM post failed, lead retained locally:",err,lead);});
+}
+
+function leadMsg(l){
+  if(lang==="es"){
+    return "Hola 👋 Acabo de enviar una solicitud desde la web.\n\n"
+      +"Nombre: "+l.name+"\nCategoría: "+l.category+"\nBusca: "+l.lookingFor
+      +"\nVolumen: "+l.volume+"\n\n¿Me confirman disponibilidad y precio?";
+  }
+  return "Hi 👋 I just submitted a request from your site.\n\n"
+    +"Name: "+l.name+"\nCategory: "+l.category+"\nLooking for: "+l.lookingFor
+    +"\nVolume: "+l.volume+"\n\nCould you confirm availability and pricing?";
+}
+
+function success(l){
+  var link=waHref(leadMsg(l));
+  $("#waFinish").setAttribute("href",link);
+  var dl=$("#recap"); dl.innerHTML="";
+  var labels=UI[lang].recap;
+  [["category",l.category],["clarity",l.lookingFor],["volume",l.volume],["channel",l.preferredChannel]]
+    .forEach(function(p){
+      if(!p[1]) return;
+      var row=document.createElement("div");
+      var dt=document.createElement("dt"); dt.textContent=labels[p[0]];
+      var dd=document.createElement("dd"); dd.textContent=p[1];
+      row.appendChild(dt); row.appendChild(dd); dl.appendChild(row);
+    });
+  goTo(6,false);
+  $("#mStep").textContent=UI[lang].done;
+  $("#mLeft").textContent="";
+  $("#mBar").style.width="100%";
+  $$("#mDots i").forEach(function(d){d.classList.add("done");});
+  $("#mChips").innerHTML="";
+  if(l.preferredChannel==="WhatsApp"){
+    setTimeout(function(){window.open(link,"_blank","noopener");},CONFIG.redirectDelayMs);
+  } else {
+    $("#redir").textContent = lang==="es"
+      ? "También puedes continuar por WhatsApp ahora mismo si lo prefieres."
+      : "You can also continue on WhatsApp right now if you prefer.";
+  }
+}
+
+document.addEventListener("mouseout", function(e){
+  if(!CONFIG.autoOpenEnabled||autoFired||started||completed) return;
+  if(!e.relatedTarget && e.clientY<12){autoFired=true; openM("exit-intent");}
+});
+
+/* ---------- boot ---------- */
+snapshot();
+$$(".lang button").forEach(function(b){b.addEventListener("click",function(){setLang(b.getAttribute("data-lang"));});});
+$$("[data-cta]:not([data-open])").forEach(function(el){
+  el.addEventListener("click",function(){track("cta_click",{location:el.getAttribute("data-cta"),language:lang});});
+});
+var urlLang=(new URLSearchParams(location.search)).get("lang");
+var navLang=(navigator.language||"en").toLowerCase().indexOf("es")===0?"es":"en";
+setLang(urlLang==="es"||urlLang==="en"?urlLang:navLang);
+onScroll(); updateMeta(); refreshWa();
+})();
+</script>
+</body>
+</html>
