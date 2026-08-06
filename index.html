@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Peptides Costa Rica — Premium Research Peptides, Delivered To You</title>
-<meta name="description" content="Premium research peptides from certified laboratories. Verified purity, Certificates of Analysis available, transparent pricing and 15% off 5+ vials. Check availability in 45 seconds.">
+<meta name="description" content="Premium research peptides from certified laboratories. Verified purity, Certificates of Analysis available and 15% off 5+ vials. Request personalized guidance and current pricing in 45 seconds.">
 <meta name="theme-color" content="#06213F">
 <meta property="og:title" content="Peptides Costa Rica — Premium Research Peptides, Delivered To You">
 <meta property="og:description" content="Laboratory-tested purity. Certificates of Analysis available. Transparent pricing and direct support in English and Spanish.">
@@ -368,11 +368,30 @@ a.rating:hover{transform:translateY(-3px);box-shadow:var(--sh);border-color:var(
 .recap div{display:flex;justify-content:space-between;gap:14px;font-size:.82rem}
 .recap dt{color:var(--ink3)}
 .recap dd{margin:0;font-weight:600;color:var(--b900);text-align:right}
+
+/* ---------------- Added for the lead-generation update ---------------- */
+/* Optional-field tag */
+.opt-tag{display:inline-block;margin-left:6px;font-size:.66rem;font-weight:500;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--ink3);background:var(--b50);border:1px solid var(--b100);
+  border-radius:5px;padding:2px 6px;vertical-align:middle}
+.fld__help{margin:6px 0 0;font-size:.74rem;color:var(--ink3);line-height:1.5}
+
+/* Alternate contact buttons (email / phone; swap target via CONFIG.messagingChannel) */
+.btn--alt{background:var(--b800);color:#fff;box-shadow:0 10px 24px -12px rgba(10,52,104,.9)}
+.btn--alt:hover{background:var(--b700);transform:translateY(-2px)}
+.fab__b--alt{background:var(--b800);color:#fff;box-shadow:0 14px 32px -12px rgba(10,52,104,.9)}
+
+/* Thank-you "what happens next" */
+.next{text-align:left;border:1px solid var(--line);border-radius:var(--r);padding:16px 18px;margin:0 0 16px}
+.next__t{margin:0 0 10px;font-size:.71rem;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--b600)}
+.next__l{margin:0;padding-left:20px;display:grid;gap:7px}
+.next__l li{font-size:.85rem;color:var(--ink2);line-height:1.6}
+.next__l li::marker{color:var(--b500);font-weight:700}
 </style>
 <script>document.documentElement.className += " js";</script>
 </head>
 <body>
-<a class="skip" href="#enquiry" data-i18n="skip">Skip to the availability request</a>
+<a class="skip" href="#enquiry" data-i18n="skip">Skip to the information request form</a>
 
 <!-- ============================ HEADER ============================ -->
 <header class="hdr" id="hdr">
@@ -397,7 +416,7 @@ a.rating:hover{transform:translateY(-3px);box-shadow:var(--sh);border-color:var(
         <button type="button" data-lang="en" aria-pressed="true">EN</button>
         <button type="button" data-lang="es" aria-pressed="false">ES</button>
       </div>
-      <button class="btn btn--primary btn--sm" data-open data-cta="header" type="button" data-i18n="cta.header">Check availability</button>
+      <button class="btn btn--primary btn--sm" data-open data-cta="header" type="button" data-i18n="cta.header">Request Information</button>
     </div>
   </div>
 </header>
@@ -416,16 +435,15 @@ a.rating:hover{transform:translateY(-3px);box-shadow:var(--sh);border-color:var(
 
       <h1><span data-i18n="hero.h1a">Premium research peptides,</span> <em data-i18n="hero.h1b">delivered to you.</em></h1>
 
-      <p class="lede" data-i18n="hero.sub">Verified purity, transparent pricing and a direct line to a real person. Every product is sourced from certified laboratories and tested for consistency, and a Certificate of Analysis is available for anything you order.</p>
+      <p class="lede" data-i18n="hero.sub">Verified purity, transparent pricing and personalized guidance from a real specialist. Every product is sourced from certified laboratories and tested for consistency, and a Certificate of Analysis is available for anything you order.</p>
 
       <div class="hero__ctas">
         <button class="btn btn--primary btn--lg btn--pulse" data-open data-cta="hero" type="button">
-          <span data-i18n="cta.primary">Check availability &amp; pricing</span>
+          <span data-i18n="cta.primary">Get Started Today</span>
           <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h13m0 0-5.5-5.5M18 12l-5.5 5.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
-        <a class="btn btn--wa-out btn--lg" href="#" data-wa data-cta="hero-wa">
-          <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.09c-.24.68-1.42 1.3-1.96 1.35-.5.05-.98.23-3.32-.69-2.79-1.1-4.57-3.95-4.71-4.13-.14-.19-1.13-1.5-1.13-2.86 0-1.36.71-2.03.96-2.31.25-.28.55-.35.73-.35.18 0 .37 0 .53.01.17.01.4-.06.62.48.24.57.8 1.97.87 2.11.07.14.12.31.02.5-.09.19-.14.31-.28.47-.14.16-.29.36-.42.48-.14.14-.28.29-.12.57.16.28.72 1.18 1.54 1.91 1.06.94 1.95 1.24 2.23 1.38.28.14.44.12.6-.07.17-.19.7-.81.88-1.09.19-.28.37-.23.63-.14.25.09 1.65.78 1.93.92.28.14.47.21.54.33.07.11.07.65-.17 1.33Z"/></svg>
-          <span data-i18n="cta.wa">WhatsApp us</span>
+        <a class="btn btn--ghost btn--lg" href="#why" data-cta="hero-learn">
+          <span data-i18n="cta.learn">See how it works</span>
         </a>
       </div>
 
@@ -483,7 +501,7 @@ a.rating:hover{transform:translateY(-3px);box-shadow:var(--sh);border-color:var(
     <div class="band__i"><b data-count="40" data-suffix="+">40+</b><span data-i18n="band.1">Peptides in the catalogue</span></div>
     <div class="band__i"><b data-count="15" data-suffix="%">15%</b><span data-i18n="band.2">Off 5+ vials of the same product</span></div>
     <div class="band__i"><b data-count="0">0</b><span data-i18n="band.3">Minimum order quantity</span></div>
-    <div class="band__i"><b data-count="4">4</b><span data-i18n="band.4">Ways to pay, including cash</span></div>
+    <div class="band__i"><b data-count="2">2</b><span data-i18n="band.4">Languages, English and Spanish</span></div>
   </div>
 </section>
 
@@ -513,9 +531,9 @@ a.rating:hover{transform:translateY(-3px);box-shadow:var(--sh);border-color:var(
         <p data-i18n="w.3.b">Ask for the COA covering what you are ordering and we will send it across — that offer stands whether or not you go on to buy.</p>
       </div>
       <div class="card rv">
-        <div class="ic"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9 9 0 0 1-4.2-1L3 20l1.2-4.4A8.3 8.3 0 0 1 3 11.5C3 6.8 7 3 12 3s9 3.8 9 8.5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
-        <h3 data-i18n="w.4.t">A real person, one price</h3>
-        <p data-i18n="w.4.b">Direct communication in English or Spanish, availability verified before payment, and the price you are quoted is the price you pay.</p>
+        <div class="ic"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 20.5a8.5 8.5 0 1 0 0-17 8.5 8.5 0 0 0 0 17Z" stroke="currentColor" stroke-width="1.8"/><path d="M9.3 9.6a2.8 2.8 0 1 1 3.5 2.7v1.4M12.1 16.6v.3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+        <h3 data-i18n="w.4.t">Personalized guidance</h3>
+        <p data-i18n="w.4.b">Tell us what you are working on and a specialist will walk you through the options in English or Spanish, with the price quoted up front.</p>
       </div>
     </div>
 
@@ -526,7 +544,7 @@ a.rating:hover{transform:translateY(-3px);box-shadow:var(--sh);border-color:var(
 
     <div style="text-align:center;margin-top:clamp(28px,3.2vw,42px)" class="rv">
       <button class="btn btn--primary btn--lg btn--pulse" data-open data-cta="why" type="button">
-        <span data-i18n="cta.why">Ask what is in stock today</span>
+        <span data-i18n="cta.why">Receive Personalized Guidance</span>
         <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h13m0 0-5.5-5.5M18 12l-5.5 5.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
     </div>
@@ -587,11 +605,11 @@ a.rating:hover{transform:translateY(-3px);box-shadow:var(--sh);border-color:var(
       </div>
       <div class="fact rv">
         <svg width="19" height="19" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <div><strong data-i18n="t.f2.t">Four ways to pay</strong><span data-i18n="t.f2.b">SINPE Móvil, Zelle, PayPal or cash.</span></div>
+        <div><strong data-i18n="t.f2.t">A specialist, not a bot</strong><span data-i18n="t.f2.b">A real person answers, in English or Spanish.</span></div>
       </div>
       <div class="fact rv">
         <svg width="19" height="19" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <div><strong data-i18n="t.f3.t">Stock checked first</strong><span data-i18n="t.f3.b">We confirm availability before you pay anything.</span></div>
+        <div><strong data-i18n="t.f3.t">Stock checked first</strong><span data-i18n="t.f3.b">We confirm availability before you commit to anything.</span></div>
       </div>
       <div class="fact rv">
         <svg width="19" height="19" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -622,11 +640,11 @@ a.rating:hover{transform:translateY(-3px);box-shadow:var(--sh);border-color:var(
 
       <div class="acc rv"><h3 style="margin:0"><button class="acc__btn" type="button" aria-expanded="false"><span data-i18n="faq.2.q">Is there a bulk discount?</span><span class="acc__ic" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg></span></button></h3><div class="acc__p"><div class="acc__in"><p data-i18n="faq.2.a">Purchase five or more vials of the same product and receive 15% off. Prices are listed per vial and the discount is applied at purchase. There is no mandatory minimum order.</p></div></div></div>
 
-      <div class="acc rv"><h3 style="margin:0"><button class="acc__btn" type="button" aria-expanded="false"><span data-i18n="faq.3.q">How do I confirm a product is in stock?</span><span class="acc__ic" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg></span></button></h3><div class="acc__p"><div class="acc__in"><p data-i18n="faq.3.a">Send the request on this page or message us directly, and we will verify availability before you pay anything. You will never be charged for something we then have to backorder.</p></div></div></div>
+      <div class="acc rv"><h3 style="margin:0"><button class="acc__btn" type="button" aria-expanded="false"><span data-i18n="faq.3.q">How do I confirm a product is in stock?</span><span class="acc__ic" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg></span></button></h3><div class="acc__p"><div class="acc__in"><p data-i18n="faq.3.a">Send the request on this page and we will verify availability and come back to you directly. You will never be charged for something we then have to backorder.</p></div></div></div>
 
-      <div class="acc rv"><h3 style="margin:0"><button class="acc__btn" type="button" aria-expanded="false"><span data-i18n="faq.4.q">What payment methods do you accept?</span><span class="acc__ic" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg></span></button></h3><div class="acc__p"><div class="acc__in"><p data-i18n="faq.4.a">SINPE Móvil, Zelle, PayPal and cash. You can complete the order online, or simply confirm it over WhatsApp and pay whichever way suits you.</p></div></div></div>
+      <div class="acc rv"><h3 style="margin:0"><button class="acc__btn" type="button" aria-expanded="false"><span data-i18n="faq.4.q">What happens after I submit the form?</span><span class="acc__ic" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg></span></button></h3><div class="acc__p"><div class="acc__in"><p data-i18n="faq.4.a">A member of our team reviews what you sent and contacts you directly with current availability, pricing and the Certificate of Analysis if you asked for it. We reply in whichever language you selected. There is no obligation at any point.</p></div></div></div>
 
-      <div class="acc rv"><h3 style="margin:0"><button class="acc__btn" type="button" aria-expanded="false"><span data-i18n="faq.5.q">How is delivery handled?</span><span class="acc__ic" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg></span></button></h3><div class="acc__p"><div class="acc__in"><p data-i18n="faq.5.a">Tell us where you are and we will confirm the delivery options and timing available for your location before you commit to anything. Delivery is arranged once payment is confirmed.</p></div></div></div>
+      <div class="acc rv"><h3 style="margin:0"><button class="acc__btn" type="button" aria-expanded="false"><span data-i18n="faq.5.q">How is delivery handled?</span><span class="acc__ic" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg></span></button></h3><div class="acc__p"><div class="acc__in"><p data-i18n="faq.5.a">Tell us where you are and we will confirm the delivery options and timing available for your location before you commit to anything.</p></div></div></div>
 
       <div class="acc rv"><h3 style="margin:0"><button class="acc__btn" type="button" aria-expanded="false"><span data-i18n="faq.6.q">Can I request a product that is not listed?</span><span class="acc__ic" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg></span></button></h3><div class="acc__p"><div class="acc__in"><p data-i18n="faq.6.a">Yes. Get in touch with the compound you are looking for and we will check whether we can source it and what the timeline would be.</p></div></div></div>
 
@@ -640,19 +658,19 @@ a.rating:hover{transform:translateY(-3px);box-shadow:var(--sh);border-color:var(
   <div class="wrap">
     <div class="strip rv">
       <p class="eyebrow" style="justify-content:center" data-i18n="fin.eyebrow">Four questions, 45 seconds</p>
-      <h2 data-i18n="fin.h2">Find out what is in stock and what it costs</h2>
-      <p data-i18n="fin.sub">Tell us the category and how many vials. We come straight back with current availability, the price per vial, your bulk discount if it applies, and the COA if you want to see it first.</p>
+      <h2 data-i18n="fin.h2">Get personalized guidance and current pricing</h2>
+      <p data-i18n="fin.sub">Tell us what you are looking for and where you are. A specialist reviews your request and comes back to you directly with availability, the price per vial, your bulk discount if it applies, and the COA if you want to see it first.</p>
       <div class="strip__ctas">
         <button class="btn btn--primary btn--lg btn--pulse" data-open data-cta="final" type="button">
-          <span data-i18n="cta.final">Check availability now</span>
+          <span data-i18n="cta.final">Request More Information</span>
           <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h13m0 0-5.5-5.5M18 12l-5.5 5.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
-        <a class="btn btn--ghost btn--lg" href="#" data-wa data-cta="final-wa">
-          <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Z"/></svg>
-          <span data-i18n="cta.wa2">Or message us directly</span>
+        <a class="btn btn--ghost btn--lg" href="mailto:info@peptidescostarica.net" data-cta="final-email">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3" stroke="currentColor" stroke-width="1.8"/><path d="m3.5 7 8.5 6 8.5-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          <span data-i18n="cta.email">Or email us directly</span>
         </a>
       </div>
-      <p style="margin-top:16px;font-size:.8rem;color:rgba(255,255,255,.6)" data-i18n="fin.micro">No account &middot; No minimum order &middot; Research use only</p>
+      <p style="margin-top:16px;font-size:.8rem;color:rgba(255,255,255,.6)" data-i18n="fin.micro">No account &middot; No obligation &middot; Research use only</p>
     </div>
   </div>
 </section>
@@ -693,10 +711,10 @@ a.rating:hover{transform:translateY(-3px);box-shadow:var(--sh);border-color:var(
       <div>
         <h4 data-i18n="ftr.c3">Contact</h4>
         <ul>
-          <li><a href="#" data-wa data-cta="footer-wa" data-i18n="ftr.wa">WhatsApp: +506 8404-6973</a></li>
+          <li><a href="mailto:info@peptidescostarica.net">info@peptidescostarica.net</a></li>
           <li><a href="tel:+18314715559" data-i18n="ftr.us">US: +1 (831) 471-5559</a></li>
           <li><a href="tel:+50684046973" data-i18n="ftr.cr">CR: +506 8404-6973</a></li>
-          <li><a href="mailto:info@peptidescostarica.net">info@peptidescostarica.net</a></li>
+          <li><button class="btn btn--ghost btn--sm" style="margin-top:6px;color:#fff;border-color:rgba(255,255,255,.3)" data-open data-cta="footer" type="button" data-i18n="cta.footer">Request Information</button></li>
         </ul>
       </div>
     </div>
@@ -713,19 +731,19 @@ a.rating:hover{transform:translateY(-3px);box-shadow:var(--sh);border-color:var(
 
 <!-- ============================ STICKY + FAB ============================ -->
 <div class="sticky" id="sticky">
-  <button class="btn btn--primary btn--pulse" data-open data-cta="sticky" type="button" data-i18n="cta.sticky">Check availability</button>
-  <a class="btn btn--wa" href="#" data-wa data-cta="sticky-wa" aria-label="WhatsApp">
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.09c-.24.68-1.42 1.3-1.96 1.35-.5.05-.98.23-3.32-.69-2.79-1.1-4.57-3.95-4.71-4.13-.14-.19-1.13-1.5-1.13-2.86 0-1.36.71-2.03.96-2.31.25-.28.55-.35.73-.35.18 0 .37 0 .53.01.17.01.4-.06.62.48.24.57.8 1.97.87 2.11.07.14.12.31.02.5-.09.19-.14.31-.28.47-.14.16-.29.36-.42.48-.14.14-.28.29-.12.57.16.28.72 1.18 1.54 1.91 1.06.94 1.95 1.24 2.23 1.38.28.14.44.12.6-.07.17-.19.7-.81.88-1.09.19-.28.37-.23.63-.14.25.09 1.65.78 1.93.92.28.14.47.21.54.33.07.11.07.65-.17 1.33Z"/></svg>
+  <button class="btn btn--primary btn--pulse" data-open data-cta="sticky" type="button" data-i18n="cta.sticky">Get Started Today</button>
+  <a class="btn btn--alt" href="tel:+18314715559" data-cta="sticky-call" data-alt-contact aria-label="Call us">
+    <svg width="21" height="21" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.5 3.5h3l1.5 4-2 1.4a12 12 0 0 0 6.1 6.1l1.4-2 4 1.5v3a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4.5 5.7a2 2 0 0 1 2-2.2Z" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/></svg>
   </a>
 </div>
 
 <div class="fab">
-  <a class="fab__b fab__b--wa" href="#" data-wa data-cta="fab-wa" aria-label="WhatsApp us">
-    <span class="fab__lbl" data-i18n="fab.wa">Message us on WhatsApp</span>
-    <svg width="27" height="27" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.09c-.24.68-1.42 1.3-1.96 1.35-.5.05-.98.23-3.32-.69-2.79-1.1-4.57-3.95-4.71-4.13-.14-.19-1.13-1.5-1.13-2.86 0-1.36.71-2.03.96-2.31.25-.28.55-.35.73-.35.18 0 .37 0 .53.01.17.01.4-.06.62.48.24.57.8 1.97.87 2.11.07.14.12.31.02.5-.09.19-.14.31-.28.47-.14.16-.29.36-.42.48-.14.14-.28.29-.12.57.16.28.72 1.18 1.54 1.91 1.06.94 1.95 1.24 2.23 1.38.28.14.44.12.6-.07.17-.19.7-.81.88-1.09.19-.28.37-.23.63-.14.25.09 1.65.78 1.93.92.28.14.47.21.54.33.07.11.07.65-.17 1.33Z"/></svg>
+  <a class="fab__b fab__b--alt" href="mailto:info@peptidescostarica.net" data-cta="fab-email" data-alt-contact aria-label="Email us">
+    <span class="fab__lbl" data-i18n="fab.email">Email us</span>
+    <svg width="25" height="25" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3" stroke="currentColor" stroke-width="1.9"/><path d="m3.5 7 8.5 6 8.5-6" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>
   </a>
-  <button class="fab__b fab__b--q" data-open data-cta="fab-quote" type="button" aria-label="Check availability">
-    <span class="fab__lbl" data-i18n="fab.q">Check availability — 45 seconds</span>
+  <button class="fab__b fab__b--q" data-open data-cta="fab-form" type="button" aria-label="Request information">
+    <span class="fab__lbl" data-i18n="fab.q">Request information — 45 seconds</span>
     <svg width="25" height="25" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6.5h16M4 12h16M4 17.5h9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
   </button>
 </div>
@@ -739,8 +757,8 @@ a.rating:hover{transform:translateY(-3px);box-shadow:var(--sh);border-color:var(
     </button>
 
     <div class="mod__top">
-      <span class="mod__kick"><span class="dot-live"></span><span data-i18n="mod.kick">Free · No account needed</span></span>
-      <h2 class="mod__t" id="modTitle" data-i18n="mod.title">Check availability &amp; pricing</h2>
+      <span class="mod__kick"><span class="dot-live"></span><span data-i18n="mod.kick">Free · No obligation</span></span>
+      <h2 class="mod__t" id="modTitle" data-i18n="mod.title">Get personalized guidance</h2>
       <p class="mod__s" id="modSub" data-i18n="mod.sub">Four quick questions, then your details. Around 45 seconds.</p>
     </div>
 
@@ -792,44 +810,52 @@ a.rating:hover{transform:translateY(-3px);box-shadow:var(--sh);border-color:var(
       </div>
 
       <div class="pane" data-step="4">
-        <h3 class="mq" data-i18n="s4.q">How should we get back to you?</h3>
-        <p class="mh" data-i18n="s4.h">We will use this channel and no other.</p>
+        <h3 class="mq" data-i18n="s4.q">Which language should we reply in?</h3>
+        <p class="mh" data-i18n="s4.h">Your specialist will use this for every message.</p>
         <div class="opts">
-          <button type="button" class="opt" data-q="channel" data-val="WhatsApp"><span class="opt__d"></span><span class="opt__t" data-i18n="s4.o1">WhatsApp<span class="opt__s" data-i18n="s4.o1s">Fastest — we reply quickly during business hours</span></span></button>
-          <button type="button" class="opt" data-q="channel" data-val="Email"><span class="opt__d"></span><span class="opt__t" data-i18n="s4.o2">Email<span class="opt__s" data-i18n="s4.o2s">Full availability list and COA attached</span></span></button>
-          <button type="button" class="opt" data-q="channel" data-val="Phone"><span class="opt__d"></span><span class="opt__t" data-i18n="s4.o3">Phone call</span></button>
+          <button type="button" class="opt" data-q="preferredLanguage" data-val="English"><span class="opt__d"></span><span class="opt__t" data-i18n="s4.o1">English</span></button>
+          <button type="button" class="opt" data-q="preferredLanguage" data-val="Spanish"><span class="opt__d"></span><span class="opt__t" data-i18n="s4.o2">Español</span></button>
         </div>
       </div>
 
       <div class="pane" data-step="5">
         <h3 class="mq" data-i18n="s5.q">Where should we send it?</h3>
-        <p class="mh" data-i18n="s5.h">Last step — then we go and check stock for you.</p>
+        <p class="mh" data-i18n="s5.h">Last step — then a specialist picks it up from here.</p>
         <form id="qForm" novalidate>
           <div class="fld">
-            <label for="fname" data-i18n="f.name">Name</label>
-            <input type="text" id="fname" autocomplete="name" data-i18n-ph="f.name.ph" placeholder="Your name">
-            <p class="err" id="err-fname" data-i18n="f.name.err">Please enter your name.</p>
+            <label for="fname" data-i18n="f.fname">First name</label>
+            <input type="text" id="fname" autocomplete="given-name" data-i18n-ph="f.fname.ph" placeholder="Your first name">
+            <p class="err" id="err-fname" data-i18n="f.fname.err">Please enter your first name.</p>
           </div>
           <div class="fld">
-            <label for="email" data-i18n="f.email">Email</label>
+            <label for="lname" data-i18n="f.lname">Last name <span class="opt-tag" data-i18n="f.optional">optional</span></label>
+            <input type="text" id="lname" autocomplete="family-name" data-i18n-ph="f.lname.ph" placeholder="Your last name">
+          </div>
+          <div class="fld">
+            <label for="email" data-i18n="f.email">Email address</label>
             <input type="email" id="email" autocomplete="email" inputmode="email" data-i18n-ph="f.email.ph" placeholder="you@email.com">
             <p class="err" id="err-email" data-i18n="f.email.err">Please enter a valid email address.</p>
           </div>
           <div class="fld">
-            <label for="phone" data-i18n="f.phone">Phone / WhatsApp</label>
+            <label for="phone" data-i18n="f.phone">Phone number</label>
             <input type="tel" id="phone" autocomplete="tel" inputmode="tel" data-i18n-ph="f.phone.ph" placeholder="+1 000 000 0000">
             <p class="err" id="err-phone" data-i18n="f.phone.err">Please enter a valid phone number.</p>
+          </div>
+          <div class="fld">
+            <label for="altphone" data-i18n="f.alt">Messaging number <span class="opt-tag" data-i18n="f.optional">optional</span></label>
+            <input type="tel" id="altphone" inputmode="tel" data-i18n-ph="f.alt.ph" placeholder="Only if different from the number above">
+            <p class="fld__help" data-i18n="f.alt.help">Add this only if you would rather be reached on a different number.</p>
           </div>
 
           <input class="hp" type="text" id="company" tabindex="-1" autocomplete="off" aria-hidden="true">
 
           <label class="chk" for="consent">
             <input type="checkbox" id="consent">
-            <span data-i18n="f.consent">I agree to be contacted about this enquiry and to receive occasional product and stock updates by email or WhatsApp. Unsubscribe any time. All products are supplied for laboratory research use only.</span>
+            <span data-i18n="f.consent">I agree to be contacted about this request and to receive occasional product and stock updates by email or phone. Unsubscribe any time. All products are supplied for laboratory research use only.</span>
           </label>
           <p class="err" id="err-consent" data-i18n="f.consent.err">Please tick the box so we can reply to you.</p>
 
-          <button type="submit" class="btn btn--primary btn--block btn--lg" id="qSubmit" style="margin-top:14px" data-i18n="cta.submit">Send my request</button>
+          <button type="submit" class="btn btn--primary btn--block btn--lg" id="qSubmit" style="margin-top:14px" data-i18n="cta.submit">Get My Personalized Plan</button>
 
           <p class="mfoot">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4.5" y="10" width="15" height="10" rx="3" stroke="currentColor" stroke-width="1.9"/><path d="M8 10V7.5a4 4 0 0 1 8 0V10" stroke="currentColor" stroke-width="1.9"/></svg>
@@ -838,17 +864,30 @@ a.rating:hover{transform:translateY(-3px);box-shadow:var(--sh);border-color:var(
         </form>
       </div>
 
+      <!-- ---------- THANK YOU ---------- -->
       <div class="pane" data-step="6">
         <div class="done">
           <div class="done__r"><svg width="33" height="33" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <h3 data-i18n="done.h">Got it — we are checking stock now.</h3>
-          <p data-i18n="done.p">Here is what you told us. Continue on WhatsApp and we will pick up from exactly this point.</p>
+          <h3 id="doneH" data-i18n="done.h">Thank you — your request has been received.</h3>
+          <p data-i18n="done.p">A member of our team will contact you shortly with current availability, pricing and the guidance you asked for.</p>
+
           <div class="recap"><dl id="recap"></dl></div>
-          <a class="btn btn--wa btn--block btn--lg" id="waFinish" href="#">
-            <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Z"/></svg>
-            <span data-i18n="cta.continue">Continue on WhatsApp</span>
-          </a>
-          <p class="mfoot" style="margin-top:12px"><span id="redir" data-i18n="done.redir">Opening WhatsApp automatically…</span></p>
+
+          <div class="next">
+            <p class="next__t" data-i18n="done.next">What happens next</p>
+            <ol class="next__l">
+              <li data-i18n="done.n1">A specialist reviews your request and checks current stock.</li>
+              <li data-i18n="done.n2">You receive a reply with availability, pricing and your COA if requested.</li>
+              <li data-i18n="done.n3">You decide whether to go ahead. There is no obligation.</li>
+            </ol>
+          </div>
+
+          <p class="mfoot" style="margin-top:4px">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3" stroke="currentColor" stroke-width="1.9"/><path d="m3.5 7 8.5 6 8.5-6" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>
+            <span data-i18n="done.mail">Please check your email — including your spam folder — for our confirmation.</span>
+          </p>
+
+          <button type="button" class="btn btn--primary btn--block btn--lg" id="doneClose" style="margin-top:18px" data-i18n="cta.doneClose">Back to the site</button>
         </div>
       </div>
     </div>
@@ -861,16 +900,30 @@ a.rating:hover{transform:translateY(-3px);box-shadow:var(--sh);border-color:var(
 
 /* ============================================================
    CONFIG
+   ------------------------------------------------------------
+   messagingChannel is the future-proofing hook. WhatsApp has been
+   removed as a conversion path, but the plumbing is still here:
+   set enabled:true, fill in the platform details, and every element
+   marked [data-alt-contact] switches from email/phone to that
+   platform automatically. Nothing else needs editing.
    ============================================================ */
 var CONFIG = {
-  whatsapp: "50684046973",
   email: "info@peptidescostarica.net",
+  phoneUS: "+18314715559",
+  phoneCR: "+50684046973",
   crmEndpoint: null,          // set to your webhook URL to capture leads
-  redirectDelayMs: 3500,
-  autoOpenEnabled: true,      // master switch for all automatic popups
+  autoOpenEnabled: true,      // master switch for every automatic popup
   timeTriggerMs: 5000,        // open the modal this long after landing
   scrollTriggerPct: 0.55,     // backup: open at this scroll depth
-  exitIntentEnabled: true     // backup: open when the cursor leaves the window
+  exitIntentEnabled: true,    // backup: open when the cursor leaves the window
+
+  messagingChannel: {
+    enabled: false,                                    // <- flip to true to re-enable a chat channel
+    type: "whatsapp",                                  // whatsapp | telegram | sms | messenger | ...
+    handle: "50684046973",                             // number or username, no symbols
+    urlTemplate: "https://wa.me/{handle}?text={text}", // {handle} and {text} are substituted
+    label: { en: "Message us", es: "Escríbenos" }
+  }
 };
 
 var $  = function(s,c){return (c||document).querySelector(s);};
@@ -880,35 +933,36 @@ var $$ = function(s,c){return Array.prototype.slice.call((c||document).querySele
    i18n — English in the markup, Spanish here
    ============================================================ */
 var ES = {
-"skip":"Ir a la solicitud de disponibilidad",
+"skip":"Ir al formulario de solicitud de información",
 "nav.why":"Por qué nosotros","nav.trust":"Reseñas","nav.faq":"Preguntas",
 "nav.why2":"Por qué nosotros","nav.trust2":"Reseñas","nav.faq2":"Preguntas",
-"cta.header":"Ver disponibilidad","cta.primary":"Ver disponibilidad y precios","cta.wa":"Escríbenos por WhatsApp",
-"cta.why":"Pregunta qué hay en stock hoy","cta.final":"Consultar disponibilidad","cta.wa2":"O escríbenos directamente",
-"cta.sticky":"Ver disponibilidad","cta.submit":"Enviar mi solicitud","cta.continue":"Continuar por WhatsApp",
+"cta.header":"Solicitar información","cta.primary":"Comenzar hoy","cta.learn":"Ver cómo funciona",
+"cta.why":"Recibir orientación personalizada","cta.final":"Solicitar más información","cta.email":"O escríbenos por correo",
+"cta.sticky":"Comenzar hoy","cta.footer":"Solicitar información",
+"cta.submit":"Recibir mi plan personalizado","cta.doneClose":"Volver al sitio",
 "hero.flag.b":"En stock","hero.flag.t":"Listo para enviar — disponibilidad confirmada antes de pagar",
 "hero.h1a":"Péptidos de investigación premium,","hero.h1b":"entregados a ti.",
-"hero.sub":"Pureza verificada, precios transparentes y línea directa con una persona real. Cada producto proviene de laboratorios certificados y se prueba en consistencia, y hay un Certificado de Análisis disponible para lo que pidas.",
+"hero.sub":"Pureza verificada, precios transparentes y orientación personalizada de un especialista real. Cada producto proviene de laboratorios certificados y se prueba en consistencia, y hay un Certificado de Análisis disponible para lo que pidas.",
 "hero.micro":"Sin pedido mínimo · COA a solicitud · 15% de descuento en 5+ viales",
 "hero.p1":"Pureza probada en laboratorio","hero.p2":"COA disponibles","hero.p3":"English y Español",
 "float.a.t":"Probado en pureza","float.a.s":"COA disponible a solicitud",
 "float.b.t":"Entregado a ti","float.b.s":"Opciones confirmadas para tu ubicación",
-"band.1":"Péptidos en el catálogo","band.2":"Descuento en 5+ viales del mismo producto","band.3":"Cantidad mínima de pedido","band.4":"Formas de pago, incluido efectivo",
+"band.1":"Péptidos en el catálogo","band.2":"Descuento en 5+ viales del mismo producto","band.3":"Cantidad mínima de pedido","band.4":"Idiomas, inglés y español",
 "w.eyebrow":"Por qué comprarnos a nosotros",
 "w.h2":"No deberías tener que fiarte de la palabra de un proveedor",
 "w.sub":"Nuestros péptidos provienen de laboratorios certificados, se fabrican bajo estrictos estándares de control de calidad y se prueban en pureza y consistencia. Esto es lo que significa en la práctica, y lo que puedes pedir ver antes de gastar nada.",
 "w.1.t":"Laboratorios certificados","w.1.b":"Cada producto proviene de instalaciones de fabricación certificadas que operan bajo estándares documentados de control de calidad.",
 "w.2.t":"Probado en pureza","w.2.b":"El material se prueba en pureza y consistencia, para que lo que dice la etiqueta coincida con lo que hay en el vial, lote tras lote.",
 "w.3.t":"Certificado de Análisis","w.3.b":"Pide el COA que cubre tu pedido y te lo enviamos — esa oferta se mantiene compres o no.",
-"w.4.t":"Una persona real, un solo precio","w.4.b":"Comunicación directa en inglés o español, disponibilidad verificada antes de pagar, y el precio que te cotizamos es el que pagas.",
+"w.4.t":"Orientación personalizada","w.4.b":"Cuéntanos en qué trabajas y un especialista te explicará las opciones en inglés o español, con el precio cotizado por adelantado.",
 "w.ruo":"<strong>Solo para investigación.</strong> Las pruebas cubren la identidad y la pureza del material suministrado. No son una evaluación de seguridad, ni una afirmación de eficacia, ni una aprobación de ningún tipo. Todos los productos se suministran estrictamente para investigación de laboratorio y no son para uso humano ni veterinario.",
 "t.eyebrow":"La confianza de nuestros clientes",
 "t.h2":"Valorado por quienes nos compran",
 "t.sub":"Nos enorgullece la confianza y la lealtad de nuestros clientes. Nuestras valoraciones son públicas: compruébalas tú mismo antes de pedir nada.",
 "t.tp":"Trustpilot","t.g":"Google","t.fb":"Facebook",
 "t.f1.t":"Sin pedido mínimo","t.f1.b":"Pide un solo vial o cincuenta. No hay mínimo obligatorio.",
-"t.f2.t":"Cuatro formas de pago","t.f2.b":"SINPE Móvil, Zelle, PayPal o efectivo.",
-"t.f3.t":"Stock verificado primero","t.f3.b":"Confirmamos disponibilidad antes de que pagues nada.",
+"t.f2.t":"Un especialista, no un bot","t.f2.b":"Responde una persona real, en inglés o español.",
+"t.f3.t":"Stock verificado primero","t.f3.b":"Confirmamos disponibilidad antes de que te comprometas a nada.",
 "t.f4.t":"15% de descuento por volumen","t.f4.b":"Cinco o más viales del mismo producto, aplicado en la compra.",
 "t.f5.t":"¿No está en la lista? Pregunta","t.f5.b":"Dinos el compuesto y revisamos si podemos conseguirlo.",
 "t.f6.t":"COA antes de comprometerte","t.f6.b":"Pide el certificado primero — te lo enviamos igual.",
@@ -918,21 +972,21 @@ var ES = {
 "faq.2.q":"¿Hay descuento por volumen?",
 "faq.2.a":"Compra cinco o más viales del mismo producto y recibe un 15% de descuento. Los precios se indican por vial y el descuento se aplica en la compra. No hay pedido mínimo obligatorio.",
 "faq.3.q":"¿Cómo confirmo que un producto está en stock?",
-"faq.3.a":"Envía la solicitud de esta página o escríbenos directamente, y verificamos la disponibilidad antes de que pagues nada. Nunca se te cobrará por algo que luego tengamos que dejar pendiente.",
-"faq.4.q":"¿Qué métodos de pago aceptan?",
-"faq.4.a":"SINPE Móvil, Zelle, PayPal y efectivo. Puedes completar el pedido en línea o simplemente confirmarlo por WhatsApp y pagar como mejor te convenga.",
+"faq.3.a":"Envía la solicitud de esta página y verificamos la disponibilidad y te respondemos directamente. Nunca se te cobrará por algo que luego tengamos que dejar pendiente.",
+"faq.4.q":"¿Qué pasa después de enviar el formulario?",
+"faq.4.a":"Un miembro de nuestro equipo revisa lo que enviaste y te contacta directamente con la disponibilidad actual, el precio y el Certificado de Análisis si lo pediste. Respondemos en el idioma que hayas elegido. No hay ningún compromiso.",
 "faq.5.q":"¿Cómo funciona la entrega?",
-"faq.5.a":"Dinos dónde estás y te confirmamos las opciones de entrega y los tiempos disponibles para tu ubicación antes de que te comprometas a nada. La entrega se coordina una vez confirmado el pago.",
+"faq.5.a":"Dinos dónde estás y te confirmamos las opciones de entrega y los tiempos disponibles para tu ubicación antes de que te comprometas a nada.",
 "faq.6.q":"¿Puedo pedir un producto que no está listado?",
 "faq.6.a":"Sí. Escríbenos con el compuesto que buscas y revisamos si podemos conseguirlo y en qué plazo.",
 "faq.7.q":"¿Dan asesoramiento médico?",
 "faq.7.a":"No. Solo compartimos información general de producto con fines educativos. Nuestros productos se suministran estrictamente para uso en investigación de laboratorio, no están aprobados ni autorizados por la FDA para la prevención, diagnóstico, tratamiento o cura de ninguna enfermedad, y no son para uso humano ni veterinario.",
 "fin.eyebrow":"Cuatro preguntas, 45 segundos",
-"fin.h2":"Averigua qué hay en stock y cuánto cuesta",
-"fin.sub":"Dinos la categoría y cuántos viales. Te respondemos con la disponibilidad actual, el precio por vial, tu descuento por volumen si aplica y el COA si quieres verlo primero.",
-"fin.micro":"Sin cuenta · Sin pedido mínimo · Solo para investigación",
-"fab.wa":"Escríbenos por WhatsApp","fab.q":"Ver disponibilidad — 45 segundos",
-"mod.kick":"Gratis · Sin cuenta","mod.title":"Disponibilidad y precios","mod.sub":"Cuatro preguntas rápidas y tus datos. Unos 45 segundos.","mod.back":"Atrás",
+"fin.h2":"Recibe orientación personalizada y precios actuales",
+"fin.sub":"Dinos qué buscas y dónde estás. Un especialista revisa tu solicitud y te responde directamente con la disponibilidad, el precio por vial, tu descuento por volumen si aplica y el COA si quieres verlo primero.",
+"fin.micro":"Sin cuenta · Sin compromiso · Solo para investigación",
+"fab.email":"Escríbenos por correo","fab.q":"Solicitar información — 45 segundos",
+"mod.kick":"Gratis · Sin compromiso","mod.title":"Orientación personalizada","mod.sub":"Cuatro preguntas rápidas y tus datos. Unos 45 segundos.","mod.back":"Atrás",
 "s1.q":"¿Qué categoría te interesa?","s1.h":"Esto nos dice qué parte del catálogo revisar.",
 "s1.o1":"Pérdida de peso","s1.o2":"Crecimiento muscular","s1.o3":"Sanación y recuperación","s1.o4":"Antienvejecimiento y longevidad","s1.o5":"Cognitivo, piel, sueño u otro",
 "s2.q":"¿A dónde debe llegar?","s2.h":"Para confirmarte las opciones de entrega disponibles.",
@@ -940,23 +994,30 @@ var ES = {
 "s3.q":"¿Cuántos viales, aproximadamente?","s3.h":"Una estimación basta. Decide si aplica el descuento por volumen.",
 "s3.o1":"1–4 viales","s3.o2":"5–9 viales","s3.o2s":"15% de descuento en el mismo producto",
 "s3.o3":"10 viales o más","s3.o3s":"15% de descuento y hablamos de pedidos recurrentes","s3.o4":"Aún no lo sé",
-"s4.q":"¿Cómo te respondemos?","s4.h":"Usaremos este canal y ningún otro.",
-"s4.o1":"WhatsApp","s4.o1s":"Lo más rápido — respondemos pronto en horario laboral",
-"s4.o2":"Correo electrónico","s4.o2s":"Lista completa de disponibilidad y COA adjunto",
-"s4.o3":"Llamada telefónica",
-"s5.q":"¿A dónde te lo enviamos?","s5.h":"Último paso y vamos a revisar el stock para ti.",
-"f.name":"Nombre","f.name.ph":"Tu nombre","f.name.err":"Por favor, escribe tu nombre.",
+"s4.q":"¿En qué idioma te respondemos?","s4.h":"Tu especialista lo usará en todos los mensajes.",
+"s4.o1":"English","s4.o2":"Español",
+"s5.q":"¿A dónde te lo enviamos?","s5.h":"Último paso — luego un especialista lo retoma desde aquí.",
+"f.fname":"Nombre","f.fname.ph":"Tu nombre","f.fname.err":"Por favor, escribe tu nombre.",
+"f.lname":"Apellido <span class=\"opt-tag\">opcional</span>","f.lname.ph":"Tu apellido",
+"f.optional":"opcional",
 "f.email":"Correo electrónico","f.email.ph":"tu@correo.com","f.email.err":"Introduce un correo electrónico válido.",
-"f.phone":"Teléfono / WhatsApp","f.phone.ph":"+1 000 000 0000","f.phone.err":"Introduce un número de teléfono válido.",
-"f.consent":"Acepto que me contacten sobre esta consulta y recibir ocasionalmente novedades de producto y stock por correo o WhatsApp. Puedo darme de baja cuando quiera. Todos los productos se suministran únicamente para investigación de laboratorio.",
+"f.phone":"Número de teléfono","f.phone.ph":"+1 000 000 0000","f.phone.err":"Introduce un número de teléfono válido.",
+"f.alt":"Número de mensajería <span class=\"opt-tag\">opcional</span>","f.alt.ph":"Solo si es distinto del anterior",
+"f.alt.help":"Añádelo solo si prefieres que te contactemos en otro número.",
+"f.consent":"Acepto que me contacten sobre esta solicitud y recibir ocasionalmente novedades de producto y stock por correo o teléfono. Puedo darme de baja cuando quiera. Todos los productos se suministran únicamente para investigación de laboratorio.",
 "f.consent.err":"Marca la casilla para que podamos responderte.",
 "f.secure":"Confidencial — nunca vendemos ni compartimos tus datos",
-"done.h":"Listo — ya estamos revisando el stock.","done.p":"Esto es lo que nos indicaste. Continúa por WhatsApp y retomamos justo desde aquí.",
-"done.redir":"Abriendo WhatsApp automáticamente…",
+"done.h":"Gracias — hemos recibido tu solicitud.",
+"done.p":"Un miembro de nuestro equipo te contactará en breve con la disponibilidad actual, los precios y la orientación que pediste.",
+"done.next":"Qué pasa ahora",
+"done.n1":"Un especialista revisa tu solicitud y comprueba el stock actual.",
+"done.n2":"Recibes una respuesta con disponibilidad, precios y tu COA si lo pediste.",
+"done.n3":"Tú decides si quieres avanzar. No hay ningún compromiso.",
+"done.mail":"Revisa tu correo — incluida la carpeta de spam — para ver nuestra confirmación.",
 "ftr.tag":"Péptidos de investigación premium. Calidad verificada, precios transparentes, atención directa.",
 "ftr.c1":"Explorar","ftr.c2":"Información","ftr.c3":"Contacto",
 "ftr.about":"Nuestra historia","ftr.coa":"Base de datos de COA","ftr.shop":"Todos los productos",
-"ftr.wa":"WhatsApp: +506 8404-6973","ftr.us":"EE. UU.: +1 (831) 471-5559","ftr.cr":"CR: +506 8404-6973",
+"ftr.us":"EE. UU.: +1 (831) 471-5559","ftr.cr":"CR: +506 8404-6973",
 "ftr.l1":"<strong>Solo para investigación.</strong> Los productos ofrecidos por Peptides Costa Rica están destinados estrictamente a uso en investigación de laboratorio. No están aprobados ni autorizados por la FDA para la prevención, diagnóstico, tratamiento o cura de ninguna enfermedad. La información de este sitio es solo con fines educativos y no debe considerarse asesoramiento médico ni legal. No apto para uso humano ni veterinario.",
 "ftr.copy":"© 2026 Peptides Costa Rica. Todos los derechos reservados.","ftr.addr":"Curridabat, San José, 11801"
 };
@@ -964,10 +1025,12 @@ var ES = {
 var UI = {
   en:{step:function(a,b){return "Step "+a+" of "+b;},left:function(s){return "~"+s+"s left";},done:"Done",
       sending:"Sending…",back:"Welcome back — picking up where you left off.",
-      recap:{category:"Category",location:"Delivery to",volume:"Volume",channel:"Reply via"}},
+      thanks:function(n){return n ? ("Thank you, "+n+" — your request has been received.") : "Thank you — your request has been received.";},
+      recap:{category:"Category",location:"Delivery to",volume:"Volume",preferredLanguage:"Reply language"}},
   es:{step:function(a,b){return "Paso "+a+" de "+b;},left:function(s){return "~"+s+"s restantes";},done:"Listo",
       sending:"Enviando…",back:"Bienvenido de nuevo — retomamos donde lo dejaste.",
-      recap:{category:"Categoría",location:"Entrega en",volume:"Volumen",channel:"Respuesta por"}}
+      thanks:function(n){return n ? ("Gracias, "+n+" — hemos recibido tu solicitud.") : "Gracias — hemos recibido tu solicitud.";},
+      recap:{category:"Categoría",location:"Entrega en",volume:"Volumen",preferredLanguage:"Idioma de respuesta"}}
 };
 
 var lang = "en";
@@ -990,17 +1053,37 @@ function setLang(next){
     if (v != null) el.setAttribute("placeholder", v);
   });
   $$(".lang button").forEach(function(b){b.setAttribute("aria-pressed", String(b.getAttribute("data-lang")===next));});
-  updateMeta(); renderChips(); refreshWa();
+  updateMeta(); renderChips(); applyAltContact();
   track("language_switch",{language:next});
 }
 
-function waHref(msg){return "https://wa.me/"+CONFIG.whatsapp+"?text="+encodeURIComponent(msg);}
-function defaultMsg(){
-  return lang==="es"
-    ? "Hola 👋 Quisiera consultar disponibilidad y precios."
-    : "Hi 👋 I'd like to check availability and pricing.";
+/* ============================================================
+   Alternate contact channel
+   Default: email / phone. If CONFIG.messagingChannel.enabled is
+   true, every [data-alt-contact] element points at that platform
+   instead. This is the single switch for a future replacement.
+   ============================================================ */
+function channelUrl(text){
+  var mc = CONFIG.messagingChannel;
+  return mc.urlTemplate
+    .replace("{handle}", mc.handle)
+    .replace("{text}", encodeURIComponent(text || ""));
 }
-function refreshWa(){$$("[data-wa]").forEach(function(a){a.setAttribute("href", waHref(defaultMsg()));});}
+function applyAltContact(){
+  var mc = CONFIG.messagingChannel;
+  if (!mc || !mc.enabled) return;                 // leave the email/phone defaults in place
+  var msg = lang==="es"
+    ? "Hola 👋 Quisiera solicitar información sobre disponibilidad y precios."
+    : "Hi 👋 I'd like to request information about availability and pricing.";
+  $$("[data-alt-contact]").forEach(function(el){
+    el.setAttribute("href", channelUrl(msg));
+    el.setAttribute("target","_blank");
+    el.setAttribute("rel","noopener");
+    var lbl = el.querySelector(".fab__lbl");
+    if (lbl) lbl.textContent = mc.label[lang] || mc.label.en;
+    el.setAttribute("aria-label", mc.label[lang] || mc.label.en);
+  });
+}
 
 function track(ev,payload){
   var d = payload||{}; d.event = ev;
@@ -1014,7 +1097,6 @@ var hdr = $("#hdr"), sticky = $("#sticky"), autoFired = false;
 function canAutoOpen(){
   return CONFIG.autoOpenEnabled && !autoFired && !started && !completed && !ov.classList.contains("open");
 }
-
 function onScroll(){
   var y = window.pageYOffset || document.documentElement.scrollTop;
   hdr.classList.toggle("stuck", y > 8);
@@ -1026,7 +1108,6 @@ function onScroll(){
 }
 window.addEventListener("scroll", onScroll, {passive:true});
 
-/* 5-second timed popup — the primary automatic trigger */
 if (CONFIG.autoOpenEnabled && CONFIG.timeTriggerMs > 0){
   window.setTimeout(function(){
     if (canAutoOpen()){ autoFired = true; openM("timer-"+CONFIG.timeTriggerMs+"ms"); }
@@ -1079,7 +1160,7 @@ $$(".acc__btn").forEach(function(btn){
 /* ---------- modal ---------- */
 var ov=$("#ov"), mod=$("#mod");
 var TOTAL=5, current=1, started=false, completed=false, everOpened=false, lastFocus=null;
-var answers={category:"",location:"",volume:"",channel:""};
+var answers={category:"",location:"",volume:"",preferredLanguage:""};
 
 function pane(n){return $('.pane[data-step="'+n+'"]');}
 
@@ -1094,7 +1175,7 @@ function updateMeta(){
 }
 function renderChips(){
   var box=$("#mChips"); box.innerHTML="";
-  ["category","location","volume","channel"].forEach(function(k){
+  ["category","location","volume","preferredLanguage"].forEach(function(k){
     if(!answers[k]) return;
     var s=document.createElement("span"); s.className="chip"; s.textContent=answers[k]; box.appendChild(s);
   });
@@ -1139,6 +1220,7 @@ $$("[data-open]").forEach(function(b){
 });
 $$("[data-close]").forEach(function(b){b.addEventListener("click", closeM);});
 $("#modX").addEventListener("click", closeM);
+$("#doneClose").addEventListener("click", closeM);
 document.addEventListener("keydown", function(e){
   if(e.key==="Escape" && ov.classList.contains("open")) closeM();
   if(e.key==="Tab" && ov.classList.contains("open")) trap(e);
@@ -1175,26 +1257,43 @@ function validPhone(v){return v.replace(/\D/g,"").length>=7;}
 $("#qForm").addEventListener("submit", function(e){
   e.preventDefault();
   if($("#company").value!=="") return;
-  var name=$("#fname").value.trim(), email=$("#email").value.trim(), phone=$("#phone").value.trim();
-  var consent=$("#consent").checked;
-  var okN=name.length>=2, okE=validEmail(email), okP=validPhone(phone);
-  showErr("fname",!okN); showErr("email",!okE); showErr("phone",!okP); showErr("consent",!consent);
-  if(!(okN&&okE&&okP&&consent)){
+
+  var first=$("#fname").value.trim(), last=$("#lname").value.trim();
+  var email=$("#email").value.trim(), phone=$("#phone").value.trim();
+  var alt=$("#altphone").value.trim(), consent=$("#consent").checked;
+  var okF=first.length>=2, okE=validEmail(email), okP=validPhone(phone);
+
+  showErr("fname",!okF); showErr("email",!okE); showErr("phone",!okP); showErr("consent",!consent);
+  if(!(okF&&okE&&okP&&consent)){
     var bad=$("#qForm").querySelector('[aria-invalid="true"]')||$("#consent");
     if(bad) bad.focus();
     track("enquiry_validation_error",{});
     return;
   }
+
   var lead={
-    name:name,email:email,phone:phone,
-    category:answers.category,location:answers.location,
-    volume:answers.volume,preferredChannel:answers.channel,
-    marketingConsent:true,language:lang,pageUrl:location.href,referrer:document.referrer
+    firstName:first,
+    lastName:last || null,
+    email:email,
+    phone:phone,
+    messagingNumber:alt || null,
+    preferredLanguage:answers.preferredLanguage || (lang==="es"?"Spanish":"English"),
+    category:answers.category,
+    location:answers.location,
+    volume:answers.volume,
+    marketingConsent:true,
+    pageLanguage:lang,
+    pageUrl:location.href,
+    referrer:document.referrer
   };
+
   var b=$("#qSubmit"); b.disabled=true; b.textContent=UI[lang].sending;
   submitToCRM(lead).then(function(){
     completed=true;
-    track("generate_lead",{channel:answers.channel,language:lang,category:answers.category,location:answers.location,volume:answers.volume,value:1});
+    track("generate_lead",{
+      language:lead.preferredLanguage, category:lead.category,
+      location:lead.location, volume:lead.volume, value:1
+    });
     success(lead);
   });
 });
@@ -1205,23 +1304,11 @@ function submitToCRM(lead){
     .catch(function(err){console.warn("CRM post failed, lead retained locally:",err,lead);});
 }
 
-function leadMsg(l){
-  if(lang==="es"){
-    return "Hola 👋 Acabo de enviar una solicitud desde la web.\n\n"
-      +"Nombre: "+l.name+"\nCategoría: "+l.category+"\nEntrega en: "+l.location
-      +"\nVolumen: "+l.volume+"\n\n¿Me confirman disponibilidad y precio?";
-  }
-  return "Hi 👋 I just submitted a request from your site.\n\n"
-    +"Name: "+l.name+"\nCategory: "+l.category+"\nDelivery to: "+l.location
-    +"\nVolume: "+l.volume+"\n\nCould you confirm availability and pricing?";
-}
-
+/* ---------- thank you (no external redirect) ---------- */
 function success(l){
-  var link=waHref(leadMsg(l));
-  $("#waFinish").setAttribute("href",link);
   var dl=$("#recap"); dl.innerHTML="";
   var labels=UI[lang].recap;
-  [["category",l.category],["location",l.location],["volume",l.volume],["channel",l.preferredChannel]]
+  [["category",l.category],["location",l.location],["volume",l.volume],["preferredLanguage",l.preferredLanguage]]
     .forEach(function(p){
       if(!p[1]) return;
       var row=document.createElement("div");
@@ -1229,19 +1316,15 @@ function success(l){
       var dd=document.createElement("dd"); dd.textContent=p[1];
       row.appendChild(dt); row.appendChild(dd); dl.appendChild(row);
     });
+
+  $("#doneH").textContent = UI[lang].thanks(l.firstName);
+
   goTo(6,false);
   $("#mStep").textContent=UI[lang].done;
   $("#mLeft").textContent="";
   $("#mBar").style.width="100%";
   $$("#mDots i").forEach(function(d){d.classList.add("done");});
   $("#mChips").innerHTML="";
-  if(l.preferredChannel==="WhatsApp"){
-    setTimeout(function(){window.open(link,"_blank","noopener");},CONFIG.redirectDelayMs);
-  } else {
-    $("#redir").textContent = lang==="es"
-      ? "También puedes continuar por WhatsApp ahora mismo si lo prefieres."
-      : "You can also continue on WhatsApp right now if you prefer.";
-  }
 }
 
 document.addEventListener("mouseout", function(e){
@@ -1258,7 +1341,7 @@ $$("[data-cta]:not([data-open])").forEach(function(el){
 var urlLang=(new URLSearchParams(location.search)).get("lang");
 var navLang=(navigator.language||"en").toLowerCase().indexOf("es")===0?"es":"en";
 setLang(urlLang==="es"||urlLang==="en"?urlLang:navLang);
-onScroll(); updateMeta(); refreshWa();
+onScroll(); updateMeta(); applyAltContact();
 })();
 </script>
 </body>
