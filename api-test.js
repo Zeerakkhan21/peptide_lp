@@ -166,6 +166,27 @@ async function fill(p, {first='Jane',last='Doe',email='jane@example.com',phone='
   chk(await p.evaluate(()=>window.dataLayer.filter(e=>e.event==='generate_lead').length)===1,'conversion fires exactly once, on the successful attempt');
   await p.close();
 
+  // ── 6b. stale error banner must not survive a field edit ──────────────────
+  hits=[]; mode='fail500';
+  p = await newPage(`http://127.0.0.1:${PORT}/`);
+  await fill(p);
+  await p.click('#qSubmit'); await p.waitForTimeout(4000);
+  chk(await p.locator('#formErr').isVisible(), 'banner shown after a failed send');
+  await p.uncheck('#consent'); await p.waitForTimeout(250);
+  chk(!(await p.locator('#formErr').isVisible()), 'banner clears the moment a field is edited');
+  await p.click('#qSubmit'); await p.waitForTimeout(500);
+  chk(!(await p.locator('#formErr').isVisible()) && await p.locator('#err-consent').isVisible(),
+      'a validation failure shows only the field error, never the stale send error');
+  await p.check('#consent'); await p.waitForTimeout(200);
+  await p.fill('#email','x'); await p.click('#qSubmit'); await p.waitForTimeout(400);
+  chk(!(await p.locator('#formErr').isVisible()), 'same for an invalid email on a later attempt');
+  // typing must not yank focus out of the field
+  await p.fill('#email','ok@example.com');
+  await p.focus('#phone'); await p.type('#phone','5');
+  chk(await p.evaluate(()=>document.activeElement && document.activeElement.id)==='phone',
+      'clearing the banner never steals focus while typing');
+  await p.close();
+
   // ── 7. 4xx is not retried ─────────────────────────────────────────────────
   hits=[]; mode='fail400';
   p = await newPage(`http://127.0.0.1:${PORT}/`);

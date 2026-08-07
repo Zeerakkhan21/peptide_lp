@@ -1,0 +1,20 @@
+name = "lead-proxy"
+main = "cloudflare-worker.js"
+compatibility_date = "2026-01-01"
+
+# Serve the Worker from your own domain so the browser only ever sees /api/lead.
+# Replace the zone with yours, then: wrangler deploy
+[[routes]]
+pattern = "peptidescostarica.net/api/lead"
+zone_name = "peptidescostarica.net"
+
+# Optional: rate limiting. Create the namespace with
+#   wrangler kv namespace create RATE_LIMIT
+# then paste the returned id below and uncomment. Without it the Worker still
+# runs, just without per-IP limiting.
+# [[kv_namespaces]]
+# binding = "RATE_LIMIT"
+# id = "paste-the-id-here"
+
+# Set the upstream credential as a secret, never in this file:
+#   wrangler secret put LEAD_API_KEY

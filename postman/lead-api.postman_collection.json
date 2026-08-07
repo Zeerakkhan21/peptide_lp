@@ -1,0 +1,186 @@
+{
+  "info": {
+    "name": "Peptides CR — Lead API",
+    "description": "Requests for testing the lead pipeline at three levels: the upstream Lead API directly, the deployed proxy, and the local dev-server.\n\nSETUP\n1. Import this file into Postman (File → Import).\n2. Open the collection → Variables tab and set `proxyBase` to your domain.\n3. Send requests. Each one asserts its expected status in the Tests tab, so the Test Results panel tells you pass or fail without reading the body.\n\nWARNING: the requests under \"1. Upstream\" create real leads in the CRM. Use obvious test data.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "upstreamUrl", "value": "https://catalog.peptidescostarica.net/api/leads/contact", "type": "string" },
+    { "key": "proxyBase",   "value": "https://peptidescostarica.net", "type": "string" },
+    { "key": "localBase",   "value": "http://localhost:3000", "type": "string" },
+    { "key": "apiKey",      "value": "", "type": "string" }
+  ],
+  "item": [
+    {
+      "name": "1. Upstream Lead API (direct)",
+      "description": "Hits the client's API with no proxy in between. Creates real leads.",
+      "item": [
+        {
+          "name": "Valid lead — full payload",
+          "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": [
+            "pm.test('2xx', () => pm.expect(pm.response.code).to.be.within(200, 299));",
+            "console.log('status', pm.response.code, '| body', pm.response.text().slice(0, 500));"
+          ]}}],
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "Accept", "value": "application/json" },
+              { "key": "Authorization", "value": "Bearer {{apiKey}}", "disabled": true }
+            ],
+            "body": { "mode": "raw", "raw": "{\n  \"name\": \"Postman Test\",\n  \"email\": \"postman-test@example.com\",\n  \"phone\": \"88881234\",\n  \"language\": \"es\",\n  \"source\": \"adwords_lp\",\n  \"utm_source\": \"google\",\n  \"utm_medium\": \"ppc\",\n  \"utm_campaign\": \"weight-loss-search\"\n}" },
+            "url": { "raw": "{{upstreamUrl}}", "host": ["{{upstreamUrl}}"] }
+          }
+        },
+        {
+          "name": "Valid lead — empty UTMs",
+          "description": "What direct traffic sends. Confirms the API accepts empty strings rather than requiring the keys to be absent.",
+          "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": [
+            "pm.test('2xx', () => pm.expect(pm.response.code).to.be.within(200, 299));"
+          ]}}],
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"name\": \"Postman Direct\",\n  \"email\": \"postman-direct@example.com\",\n  \"phone\": \"88881234\",\n  \"language\": \"en\",\n  \"source\": \"adwords_lp\",\n  \"utm_source\": \"\",\n  \"utm_medium\": \"\",\n  \"utm_campaign\": \"\"\n}" },
+            "url": { "raw": "{{upstreamUrl}}", "host": ["{{upstreamUrl}}"] }
+          }
+        },
+        {
+          "name": "CORS preflight check",
+          "description": "Tells you whether a browser could post here directly. Look for Access-Control-Allow-Origin in the response headers. If it is absent, the proxy is not optional — the browser would block the request.",
+          "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": [
+            "const acao = pm.response.headers.get('Access-Control-Allow-Origin');",
+            "console.log('Access-Control-Allow-Origin:', acao || '(none)');",
+            "pm.test('API allows browser origins directly', () => pm.expect(acao, 'no CORS header — keep the proxy').to.not.be.null);"
+          ]}}],
+          "request": {
+            "method": "OPTIONS",
+            "header": [
+              { "key": "Origin", "value": "https://peptidescostarica.net" },
+              { "key": "Access-Control-Request-Method", "value": "POST" },
+              { "key": "Access-Control-Request-Headers", "value": "content-type" }
+            ],
+            "url": { "raw": "{{upstreamUrl}}", "host": ["{{upstreamUrl}}"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "2. Your proxy (/api/lead)",
+      "description": "Hits the proxy you deployed. This is the request the landing page actually makes.",
+      "item": [
+        {
+          "name": "Valid lead",
+          "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": [
+            "pm.test('status is 200', () => pm.response.to.have.status(200));",
+            "pm.test('returns ok:true', () => pm.expect(pm.response.json().ok).to.eql(true));"
+          ]}}],
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"name\": \"Postman Proxy\",\n  \"email\": \"postman-proxy@example.com\",\n  \"phone\": \"88881234\",\n  \"language\": \"en\",\n  \"source\": \"adwords_lp\",\n  \"utm_source\": \"google\",\n  \"utm_medium\": \"ppc\",\n  \"utm_campaign\": \"weight-loss-search\"\n}" },
+            "url": { "raw": "{{proxyBase}}/api/lead", "host": ["{{proxyBase}}"], "path": ["api", "lead"] }
+          }
+        },
+        {
+          "name": "Extra fields are stripped",
+          "description": "The proxy whitelists the eight contracted fields. Anything else a client sends must be dropped before it reaches the CRM.",
+          "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": [
+            "pm.test('accepted, extras ignored', () => pm.response.to.have.status(200));"
+          ]}}],
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"name\": \"Postman Extra\",\n  \"email\": \"postman-extra@example.com\",\n  \"phone\": \"88881234\",\n  \"language\": \"en\",\n  \"source\": \"adwords_lp\",\n  \"utm_source\": \"\",\n  \"utm_medium\": \"\",\n  \"utm_campaign\": \"\",\n  \"is_admin\": true,\n  \"injected\": \"<script>alert(1)</script>\"\n}" },
+            "url": { "raw": "{{proxyBase}}/api/lead", "host": ["{{proxyBase}}"], "path": ["api", "lead"] }
+          }
+        },
+        {
+          "name": "Invalid email → 422",
+          "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": [
+            "pm.test('rejected with 422', () => pm.response.to.have.status(422));",
+            "pm.test('names the failing field', () => pm.expect(pm.response.json().error).to.eql('email'));"
+          ]}}],
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"name\": \"Bad Email\",\n  \"email\": \"not-an-email\",\n  \"phone\": \"88881234\",\n  \"language\": \"en\",\n  \"source\": \"adwords_lp\",\n  \"utm_source\": \"\",\n  \"utm_medium\": \"\",\n  \"utm_campaign\": \"\"\n}" },
+            "url": { "raw": "{{proxyBase}}/api/lead", "host": ["{{proxyBase}}"], "path": ["api", "lead"] }
+          }
+        },
+        {
+          "name": "Short phone → 422",
+          "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": [
+            "pm.test('rejected with 422', () => pm.response.to.have.status(422));",
+            "pm.test('names the failing field', () => pm.expect(pm.response.json().error).to.eql('phone'));"
+          ]}}],
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"name\": \"Short Phone\",\n  \"email\": \"short@example.com\",\n  \"phone\": \"123\",\n  \"language\": \"en\",\n  \"source\": \"adwords_lp\",\n  \"utm_source\": \"\",\n  \"utm_medium\": \"\",\n  \"utm_campaign\": \"\"\n}" },
+            "url": { "raw": "{{proxyBase}}/api/lead", "host": ["{{proxyBase}}"], "path": ["api", "lead"] }
+          }
+        },
+        {
+          "name": "Missing name → 422",
+          "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": [
+            "pm.test('rejected with 422', () => pm.response.to.have.status(422));"
+          ]}}],
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"email\": \"noname@example.com\",\n  \"phone\": \"88881234\",\n  \"language\": \"en\",\n  \"source\": \"adwords_lp\",\n  \"utm_source\": \"\",\n  \"utm_medium\": \"\",\n  \"utm_campaign\": \"\"\n}" },
+            "url": { "raw": "{{proxyBase}}/api/lead", "host": ["{{proxyBase}}"], "path": ["api", "lead"] }
+          }
+        },
+        {
+          "name": "GET → 405",
+          "description": "The proxy should accept POST only.",
+          "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": [
+            "pm.test('method not allowed', () => pm.response.to.have.status(405));"
+          ]}}],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": { "raw": "{{proxyBase}}/api/lead", "host": ["{{proxyBase}}"], "path": ["api", "lead"] }
+          }
+        },
+        {
+          "name": "Foreign origin → 403",
+          "description": "Confirms ALLOWED_ORIGINS is doing its job. A request claiming to come from another site must be refused.",
+          "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": [
+            "pm.test('foreign origin refused', () => pm.response.to.have.status(403));"
+          ]}}],
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "Origin", "value": "https://not-your-site.example" }
+            ],
+            "body": { "mode": "raw", "raw": "{\n  \"name\": \"Foreign Origin\",\n  \"email\": \"foreign@example.com\",\n  \"phone\": \"88881234\",\n  \"language\": \"en\",\n  \"source\": \"adwords_lp\",\n  \"utm_source\": \"\",\n  \"utm_medium\": \"\",\n  \"utm_campaign\": \"\"\n}" },
+            "url": { "raw": "{{proxyBase}}/api/lead", "host": ["{{proxyBase}}"], "path": ["api", "lead"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "3. Local dev-server",
+      "description": "Point at `node dev-server.js` running on your machine. Payloads print in the terminal.",
+      "item": [
+        {
+          "name": "Valid lead → localhost:3000",
+          "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": [
+            "pm.test('status is 200', () => pm.response.to.have.status(200));",
+            "pm.test('returns ok:true', () => pm.expect(pm.response.json().ok).to.eql(true));"
+          ]}}],
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"name\": \"Local Test\",\n  \"email\": \"local@example.com\",\n  \"phone\": \"88881234\",\n  \"language\": \"es\",\n  \"source\": \"adwords_lp\",\n  \"utm_source\": \"google\",\n  \"utm_medium\": \"ppc\",\n  \"utm_campaign\": \"weight-loss-search\"\n}" },
+            "url": { "raw": "{{localBase}}/api/lead", "host": ["{{localBase}}"], "path": ["api", "lead"] }
+          }
+        }
+      ]
+    }
+  ]
+}

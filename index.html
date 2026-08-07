@@ -1283,6 +1283,16 @@ $$(".opt").forEach(function(btn){
 });
 $("#mBack").addEventListener("click", function(){ if(current>1) goTo(current-1); });
 
+// Any edit makes the previous transport error stale — drop it immediately
+// rather than leaving the visitor reading an error about a past attempt.
+$$("#qForm input").forEach(function(input){
+  ["input","change"].forEach(function(evt){
+    input.addEventListener(evt, function(){
+      if (!$("#formErr").hidden) showFormError(false);
+    });
+  });
+});
+
 function showErr(id,on){
   var e=$("#err-"+id); if(e) e.classList.toggle("show",on);
   var i=$("#"+id); if(i && i.type!=="checkbox") i.setAttribute("aria-invalid", on?"true":"false");
@@ -1483,7 +1493,12 @@ function fireConversionEvents(payload, lead){
 /** Turns a failure into the most likely cause, so debugging does not start from zero. */
 function diagnose(err){
   var ep = CONFIG.leadApi.endpoint;
-  if (err.status === 404) return "No handler at " + ep + ". Deploy one of the files in /proxy to that path — see README \"Securing the endpoint\".";
+  if (err.status === 404){
+    var relative = ep.charAt(0) === "/";
+    return "No handler at " + ep + "."
+      + (relative ? " If this page is on static hosting (GitHub Pages, S3, plain file hosting) it cannot serve a server-side path at all — deploy proxy/cloudflare-worker.js and point leadApi.endpoint at its https URL." : "")
+      + " See README \"Securing the endpoint\".";
+  }
   if (err.status === 403) return "Rejected by the proxy. Add this domain to ALLOWED_ORIGINS in the proxy file.";
   if (err.status === 405) return ep + " exists but does not accept POST. Check the route method.";
   if (err.status === 429) return "Rate limited by the proxy. Raise RATE_LIMIT_MAX or wait for the window to clear.";
@@ -1510,6 +1525,7 @@ function setSubmitting(on){
 
 function showFormError(show){
   var box = $("#formErr");
+  if (box.hidden === !show) return;          // no-op if already in that state
   box.hidden = !show;
   if (show){
     box.scrollIntoView({ block: "nearest" });
@@ -1521,6 +1537,10 @@ $("#qForm").addEventListener("submit", function(e){
   e.preventDefault();
   if (isSubmitting) return;                 // duplicate-submit guard
   if ($("#company").value !== "") return;   // honeypot
+
+  // Clear the previous transport error first: whatever went wrong last time
+  // does not describe this attempt, and it must never sit alongside a field error.
+  showFormError(false);
 
   var f = readForm();
   var okF = Validate.name(f.first), okE = Validate.email(f.email), okP = Validate.phone(f.phone);
@@ -1536,7 +1556,6 @@ $("#qForm").addEventListener("submit", function(e){
   var payload = toApiPayload(f);
   var lead = toInternalLead(f);
 
-  showFormError(false);
   setSubmitting(true);
   track("lead_submit_attempt", { source: payload.source });
 
