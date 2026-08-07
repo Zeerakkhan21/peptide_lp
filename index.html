@@ -359,6 +359,11 @@ a.rating:hover{transform:translateY(-3px);box-shadow:var(--sh);border-color:var(
 .chk{display:flex;gap:11px;align-items:flex-start;margin:14px 0 4px;font-size:.77rem;color:var(--ink2);line-height:1.6}
 .chk input{width:19px;height:19px;flex:0 0 auto;margin-top:2px;accent-color:var(--b600)}
 .hp{position:absolute!important;left:-9999px;opacity:0;height:0;width:0}
+.formerr{display:flex;gap:10px;align-items:flex-start;margin-top:14px;padding:13px 15px;border-radius:var(--r-s);
+  background:#FFF5F2;border:1px solid #F3D9D0;color:#8C3A22;font-size:.82rem;line-height:1.55}
+.formerr[hidden]{display:none}
+.formerr svg{flex:0 0 auto;margin-top:2px}
+#qSubmit[aria-busy="true"]{opacity:.75;cursor:progress}
 .mfoot{margin-top:13px;text-align:center;font-size:.73rem;color:var(--ink3);display:flex;align-items:center;justify-content:center;gap:7px}
 
 .pane{display:none}
@@ -857,6 +862,11 @@ a.rating:hover{transform:translateY(-3px);box-shadow:var(--sh);border-color:var(
           </label>
           <p class="err" id="err-consent" data-i18n="f.consent.err">Please tick the box so we can reply to you.</p>
 
+          <div class="formerr" id="formErr" role="alert" aria-live="assertive" hidden>
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.9"/><path d="M12 7.5v5.5M12 16.2v.3" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+            <span data-i18n="f.apierr">We could not send your details just then. Your answers are still here — please press the button again.</span>
+          </div>
+
           <button type="submit" class="btn btn--primary btn--block btn--lg" id="qSubmit" style="margin-top:14px" data-i18n="cta.submit">Get My Personalized Plan</button>
 
           <p class="mfoot">
@@ -913,14 +923,32 @@ var CONFIG = {
   email: "info@peptidescostarica.net",
   phoneUS: "+18314715559",
   phoneCR: "+50684046973",
-  // Where leads go. Paste the Google Apps Script /exec URL here (see
-  // google-apps-script.gs and the README) to write straight into a Sheet.
-  crmEndpoint: null,
-  // "sheet"  -> Google Apps Script. Sends a simple cross-origin POST so the
-  //             browser never issues a preflight Apps Script cannot answer.
-  // "json"   -> any webhook that returns proper CORS headers (Zapier, Make,
-  //             HubSpot, your own API).
-  crmMode: "sheet",
+  // ── Lead API ──────────────────────────────────────────────────────────
+  // endpoint is a SAME-ORIGIN path served by the proxy in /proxy. The proxy
+  // forwards to the real Lead API server-side, so the upstream URL and any
+  // credentials never reach the browser. See README "Securing the endpoint".
+  //
+  // You can point this straight at the Lead API instead, but doing so publishes
+  // the endpoint to anyone who opens DevTools and requires the API to return
+  // CORS headers for your domain. The upstream URL is deliberately kept out of
+  // this file — it lives only in the proxy. See README "Securing the endpoint".
+  leadApi: {
+    endpoint: "/api/lead",
+    source: "adwords_lp",        // overridable per campaign via ?source=
+    timeoutMs: 15000,
+    retries: 1,                  // extra attempts on network error / 5xx only
+    retryDelayMs: 1200,
+    // Sent when the URL carries no UTM parameters.
+    utmDefaults: { utm_source: "", utm_medium: "", utm_campaign: "" }
+  },
+
+  // Google Ads conversion. Leave either value empty to skip the Ads event;
+  // the GA4 generate_lead event fires regardless.
+  ads: { conversionId: "", conversionLabel: "" },
+
+  // Optional: also mirror the full lead into the Google Sheet from the
+  // previous setup. Fire-and-forget — never affects what the visitor sees.
+  sheetMirror: { enabled: false, endpoint: null },
   autoOpenEnabled: true,      // master switch for every automatic popup
   timeTriggerMs: 5000,        // open the modal this long after landing
   scrollTriggerPct: 0.55,     // backup: open at this scroll depth
@@ -1014,6 +1042,7 @@ var ES = {
 "f.alt.help":"Añádelo solo si prefieres que te contactemos en otro número.",
 "f.consent":"Acepto que me contacten sobre esta solicitud y recibir ocasionalmente novedades de producto y stock por correo o teléfono. Puedo darme de baja cuando quiera. Todos los productos se suministran únicamente para investigación de laboratorio.",
 "f.consent.err":"Marca la casilla para que podamos responderte.",
+"f.apierr":"No pudimos enviar tus datos en este momento. Tus respuestas siguen aquí — vuelve a pulsar el botón, por favor.",
 "f.secure":"Confidencial — nunca vendemos ni compartimos tus datos",
 "done.h":"Gracias — hemos recibido tu solicitud.",
 "done.p":"Un miembro de nuestro equipo te contactará en breve con la disponibilidad actual, los precios y la orientación que pediste.",
@@ -1258,79 +1287,280 @@ function showErr(id,on){
   var e=$("#err-"+id); if(e) e.classList.toggle("show",on);
   var i=$("#"+id); if(i && i.type!=="checkbox") i.setAttribute("aria-invalid", on?"true":"false");
 }
-function validEmail(v){return /^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i.test(v);}
-function validPhone(v){return v.replace(/\D/g,"").length>=7;}
+
+/* ============================================================
+   Lead submission pipeline
+   attribution -> validate -> map -> POST -> analytics -> UI
+   Each stage is independent so any one can be changed alone.
+   ============================================================ */
+
+/* ---------- 1. attribution, captured once at page load ---------- */
+var ATTRIBUTION = (function(){
+  var q = new URLSearchParams(location.search);
+  var d = CONFIG.leadApi.utmDefaults || {};
+  var pick = function(key){
+    var v = (q.get(key) || "").trim();
+    return v || d[key] || "";
+  };
+  return {
+    source:       (q.get("source") || "").trim() || CONFIG.leadApi.source,
+    utm_source:   pick("utm_source"),
+    utm_medium:   pick("utm_medium"),
+    utm_campaign: pick("utm_campaign")
+  };
+})();
+
+/* ---------- 2. validation ---------- */
+var Validate = {
+  name:  function(v){ return v.trim().length >= 2; },
+  email: function(v){ return /^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i.test(v.trim()); },
+  // 7 to 15 digits: shortest national number in use, longest E.164 allows.
+  phone: function(v){ var d = v.replace(/\D/g, ""); return d.length >= 7 && d.length <= 15; }
+};
+
+/* ---------- 3. field mapping ---------- */
+var LANG_CODE = { English: "en", Spanish: "es" };
+
+function readForm(){
+  return {
+    first:   $("#fname").value.trim(),
+    last:    $("#lname").value.trim(),
+    email:   $("#email").value.trim(),
+    phone:   $("#phone").value.trim(),
+    altPhone:$("#altphone").value.trim(),
+    consent: $("#consent").checked
+  };
+}
+
+/** Payload for the Lead API — exactly the eight documented fields. */
+function toApiPayload(f){
+  var chosen = answers.preferredLanguage || (lang === "es" ? "Spanish" : "English");
+  return {
+    name:         [f.first, f.last].filter(Boolean).join(" "),
+    email:        f.email,
+    phone:        f.phone,
+    language:     LANG_CODE[chosen] || lang,
+    source:       ATTRIBUTION.source,
+    utm_source:   ATTRIBUTION.utm_source,
+    utm_medium:   ATTRIBUTION.utm_medium,
+    utm_campaign: ATTRIBUTION.utm_campaign
+  };
+}
+
+/** Richer record used for the confirmation panel and the optional Sheet mirror. */
+function toInternalLead(f){
+  return {
+    firstName: f.first,
+    lastName:  f.last || null,
+    email:     f.email,
+    phone:     f.phone,
+    messagingNumber: f.altPhone || null,
+    preferredLanguage: answers.preferredLanguage || (lang === "es" ? "Spanish" : "English"),
+    category:  answers.category,
+    location:  answers.location,
+    volume:    answers.volume,
+    marketingConsent: true,
+    pageLanguage: lang,
+    pageUrl: location.href,
+    referrer: document.referrer,
+    submittedAt: new Date().toISOString(),
+    attribution: ATTRIBUTION
+  };
+}
+
+/* ---------- 4. transport ---------- */
+function postJSON(url, payload, timeoutMs){
+  var controller = ("AbortController" in window) ? new AbortController() : null;
+  var timer = controller ? setTimeout(function(){ controller.abort(); }, timeoutMs) : null;
+
+  return fetch(url, {
+    method: "POST",
+    headers: { "Content-Type": "application/json", "Accept": "application/json" },
+    body: JSON.stringify(payload),
+    credentials: "same-origin",
+    signal: controller ? controller.signal : undefined
+  }).then(function(res){
+    if (timer) clearTimeout(timer);
+    if (!res.ok){
+      var err = new Error("HTTP " + res.status);
+      err.status = res.status;
+      err.retryable = res.status >= 500 || res.status === 429;
+      throw err;
+    }
+    return res.json().catch(function(){ return {}; });   // empty body is still a success
+  }).catch(function(err){
+    if (timer) clearTimeout(timer);
+    if (err.status === undefined) err.retryable = true;  // network error or timeout
+    throw err;
+  });
+}
+
+/** True when the page was opened straight from disk, where /api/lead cannot exist. */
+function isLocalPreview(){
+  return location.protocol === "file:";
+}
+
+/** Retries only transient failures. A 400 is never retried — it will not pass. */
+function submitLead(payload){
+  if (isLocalPreview()){
+    console.warn(
+      "%c[lead] LOCAL PREVIEW — nothing was sent.",
+      "font-weight:bold",
+      "\nThe page is open from disk (file://), so the same-origin path " +
+      CONFIG.leadApi.endpoint + " cannot resolve." +
+      "\nServe the page over http(s) with the proxy deployed to test the real flow." +
+      "\nPayload that would have been sent:", payload
+    );
+    return Promise.resolve({ ok: true, simulated: true });
+  }
+  var attempts = Math.max(0, CONFIG.leadApi.retries) + 1;
+  function attempt(n){
+    return postJSON(CONFIG.leadApi.endpoint, payload, CONFIG.leadApi.timeoutMs)
+      .catch(function(err){
+        if (n < attempts && err.retryable){
+          track("lead_retry", { attempt: n, reason: err.message });
+          return new Promise(function(r){ setTimeout(r, CONFIG.leadApi.retryDelayMs); })
+            .then(function(){ return attempt(n + 1); });
+        }
+        throw err;
+      });
+  }
+  return attempt(1);
+}
+
+/** Optional secondary copy into the Google Sheet. Never blocks or fails loudly. */
+function mirrorToSheet(lead){
+  var m = CONFIG.sheetMirror;
+  if (!m || !m.enabled || !m.endpoint) return;
+  try {
+    fetch(m.endpoint, {
+      method: "POST", mode: "no-cors", keepalive: true,
+      headers: { "Content-Type": "text/plain;charset=utf-8" },
+      body: JSON.stringify(lead)
+    }).catch(function(){});
+  } catch(e){}
+}
+
+/* ---------- 5. analytics ---------- */
+function fireConversionEvents(payload, lead){
+  // existing dataLayer stream, unchanged
+  track("generate_lead", {
+    language: lead.preferredLanguage,
+    category: lead.category,
+    location: lead.location,
+    volume: lead.volume,
+    source: payload.source,
+    utm_source: payload.utm_source,
+    utm_medium: payload.utm_medium,
+    utm_campaign: payload.utm_campaign,
+    value: 1
+  });
+
+  if (typeof window.gtag === "function"){
+    // GA4
+    try {
+      window.gtag("event", "generate_lead", {
+        currency: "USD", value: 1,
+        lead_source: payload.source,
+        campaign: payload.utm_campaign,
+        language: payload.language
+      });
+    } catch(e){ console.warn("GA4 generate_lead failed:", e); }
+
+    // Google Ads conversion
+    var ads = CONFIG.ads || {};
+    if (ads.conversionId && ads.conversionLabel){
+      try {
+        window.gtag("event", "conversion", {
+          send_to: ads.conversionId + "/" + ads.conversionLabel,
+          value: 1, currency: "USD"
+        });
+      } catch(e){ console.warn("Ads conversion failed:", e); }
+    }
+  }
+}
+
+/** Turns a failure into the most likely cause, so debugging does not start from zero. */
+function diagnose(err){
+  var ep = CONFIG.leadApi.endpoint;
+  if (err.status === 404) return "No handler at " + ep + ". Deploy one of the files in /proxy to that path — see README \"Securing the endpoint\".";
+  if (err.status === 403) return "Rejected by the proxy. Add this domain to ALLOWED_ORIGINS in the proxy file.";
+  if (err.status === 405) return ep + " exists but does not accept POST. Check the route method.";
+  if (err.status === 429) return "Rate limited by the proxy. Raise RATE_LIMIT_MAX or wait for the window to clear.";
+  if (err.status === 422) return "The proxy rejected the payload during its own validation.";
+  if (err.status === 502) return "The proxy could not reach the Lead API. Check the upstream URL and any API key in the proxy.";
+  if (err.name === "AbortError") return "Timed out after " + CONFIG.leadApi.timeoutMs + "ms. Raise leadApi.timeoutMs or check upstream latency.";
+  if (err.status === undefined) return "Network-level failure. If " + ep + " is an absolute URL on another domain, that API must return CORS headers for this origin; routing through the proxy avoids this entirely.";
+  return "Unexpected status " + err.status + ".";
+}
+
+/* ---------- 6. submit states ---------- */
+var isSubmitting = false;
+var submitLabel = null;
+
+function setSubmitting(on){
+  var b = $("#qSubmit");
+  if (submitLabel === null) submitLabel = b.innerHTML;
+  isSubmitting = on;
+  b.disabled = on;
+  b.setAttribute("aria-busy", on ? "true" : "false");
+  b.innerHTML = on ? UI[lang].sending : submitLabel;
+  $$("#qForm input").forEach(function(i){ i.readOnly = on; });
+}
+
+function showFormError(show){
+  var box = $("#formErr");
+  box.hidden = !show;
+  if (show){
+    box.scrollIntoView({ block: "nearest" });
+    $("#qSubmit").focus();
+  }
+}
 
 $("#qForm").addEventListener("submit", function(e){
   e.preventDefault();
-  if($("#company").value!=="") return;
+  if (isSubmitting) return;                 // duplicate-submit guard
+  if ($("#company").value !== "") return;   // honeypot
 
-  var first=$("#fname").value.trim(), last=$("#lname").value.trim();
-  var email=$("#email").value.trim(), phone=$("#phone").value.trim();
-  var alt=$("#altphone").value.trim(), consent=$("#consent").checked;
-  var okF=first.length>=2, okE=validEmail(email), okP=validPhone(phone);
+  var f = readForm();
+  var okF = Validate.name(f.first), okE = Validate.email(f.email), okP = Validate.phone(f.phone);
 
-  showErr("fname",!okF); showErr("email",!okE); showErr("phone",!okP); showErr("consent",!consent);
-  if(!(okF&&okE&&okP&&consent)){
-    var bad=$("#qForm").querySelector('[aria-invalid="true"]')||$("#consent");
-    if(bad) bad.focus();
-    track("enquiry_validation_error",{});
+  showErr("fname", !okF); showErr("email", !okE); showErr("phone", !okP); showErr("consent", !f.consent);
+  if (!(okF && okE && okP && f.consent)){
+    var bad = $("#qForm").querySelector('[aria-invalid="true"]') || $("#consent");
+    if (bad) bad.focus();
+    track("enquiry_validation_error", {});
     return;
   }
 
-  var lead={
-    firstName:first,
-    lastName:last || null,
-    email:email,
-    phone:phone,
-    messagingNumber:alt || null,
-    preferredLanguage:answers.preferredLanguage || (lang==="es"?"Spanish":"English"),
-    category:answers.category,
-    location:answers.location,
-    volume:answers.volume,
-    marketingConsent:true,
-    pageLanguage:lang,
-    pageUrl:location.href,
-    referrer:document.referrer
-  };
+  var payload = toApiPayload(f);
+  var lead = toInternalLead(f);
 
-  var b=$("#qSubmit"); b.disabled=true; b.textContent=UI[lang].sending;
-  submitToCRM(lead).then(function(){
-    completed=true;
-    track("generate_lead",{
-      language:lead.preferredLanguage, category:lead.category,
-      location:lead.location, volume:lead.volume, value:1
-    });
-    success(lead);
-  });
-});
+  showFormError(false);
+  setSubmitting(true);
+  track("lead_submit_attempt", { source: payload.source });
 
-function submitToCRM(lead){
-  if(!CONFIG.crmEndpoint){
-    console.info("[CRM stub] lead:", lead, "— set CONFIG.crmEndpoint to deliver this somewhere.");
-    return Promise.resolve();
-  }
-  lead.submittedAt = new Date().toISOString();
-  var body = JSON.stringify(lead);
-
-  // text/plain keeps this a CORS "simple request", so no OPTIONS preflight is
-  // sent. Apps Script reads the raw body from e.postData.contents either way.
-  // The response is opaque under no-cors; that is fine, the confirmation panel
-  // is rendered locally and never waits on the server.
-  var opts = (CONFIG.crmMode === "json")
-    ? { method:"POST", headers:{"Content-Type":"application/json"}, body:body, keepalive:true }
-    : { method:"POST", mode:"no-cors", headers:{"Content-Type":"text/plain;charset=utf-8"}, body:body, keepalive:true };
-
-  return fetch(CONFIG.crmEndpoint, opts)
-    .then(function(){ track("lead_delivered", {}); })
+  submitLead(payload)
+    .then(function(){
+      completed = true;
+      mirrorToSheet(lead);
+      fireConversionEvents(payload, lead);
+      setSubmitting(false);
+      success(lead);
+    })
     .catch(function(err){
-      // Last resort: sendBeacon survives a tab close mid-request.
-      var sent = false;
-      try { sent = navigator.sendBeacon && navigator.sendBeacon(CONFIG.crmEndpoint, new Blob([body], {type:"text/plain;charset=utf-8"})); } catch(e){}
-      track("lead_delivery_failed", { recovered: !!sent });
-      console.warn("Lead delivery failed" + (sent ? " — retried via sendBeacon" : "") + ":", err, lead);
+      // Field values are untouched, so the visitor can simply press submit again.
+      setSubmitting(false);
+      showFormError(true);
+      track("lead_submit_failed", { status: err.status || 0, message: err.message });
+      console.error(
+        "Lead submission failed:", err.message,
+        "| endpoint:", CONFIG.leadApi.endpoint,
+        "| payload keys:", Object.keys(payload).join(","),
+        "\n" + diagnose(err)
+      );
     });
-}
+});
 
 /* ---------- thank you (no external redirect) ---------- */
 function success(l){
